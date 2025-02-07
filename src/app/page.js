@@ -10,30 +10,35 @@ export default function Home() {
     {
       title: "RMXTA Helsinki",
       description: "A large-scale generative art exhibition developed from concept to completion",
+      mobileDescription: "A generative art exhibition from concept to completion",
       year: "2024",
       href: "/remix-the-archive"
     },
     {
       title: "Alusta Space",
       description: "An old office building transformed into a modern and versatile gallery space",
+      mobileDescription: "An old office building transformed into a modern gallery",
       year: "2024",
       href: "/alusta-space"
     },
     {
       title: "Combine24",
       description: "A pioneering digital art competition elevating Finland's national art collection",
+      mobileDescription: "A digital art competition based on national art collection",
       year: "2024",
       href: "/combine24"
     },
     {
       title: "Alusta.art",
       description: "A decentralized art platform built on the Zora protocol",
+      mobileDescription: "A decentralized art platform built on the Zora protocol",
       year: "2023",
       href: "/alusta"
     },
     {
       title: "Metaspace",
       description: "A WebGL-powered platform for virtual art exhibitions",
+      mobileDescription: "A WebGL-powered platform for virtual art exhibitions",
       year: "2022",
       href: "/metaspace"
     }
@@ -76,7 +81,9 @@ export default function Home() {
                         </span>
                       </div>
                       <span className="text-[11px] whitespace-nowrap overflow-hidden text-ellipsis md:text-[15px] md:whitespace-normal text-gray-500 md:mx-2">
-                        <span className="hidden md:inline">— </span>{article.description}
+                        <span className="hidden md:inline">— </span>
+                        <span className="md:hidden">{article.mobileDescription}</span>
+                        <span className="hidden md:inline">{article.description}</span>
                       </span>
                       <span className="hidden md:inline text-[15px] text-gray-400">
                         {article.year}
@@ -134,7 +141,7 @@ export default function Home() {
                 I lead ambitious projects and teams at the intersection of art, culture, and technology.
               </p>
               <p>
-                I’m currently working on projects that redefine museum practices by integrating emerging technologies, digital art, and agile exhibition models to create more dynamic and accessible cultural experiences.
+                I'm currently working on projects that redefine museum practices by integrating emerging technologies, digital art, and agile exhibition models to create more dynamic and accessible cultural experiences.
               </p>
               <p>
                 I grew up in Helsinki and studied Information Systems Science at the University of Jyväskylä.
