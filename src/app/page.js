@@ -1,101 +1,151 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
+import Link from 'next/link'
+import Image from 'next/image';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [activeView, setActiveView] = useState("projects");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  const articles = [
+    {
+      title: "RMXTA Helsinki",
+      description: "A large-scale generative art exhibition developed from concept to completion",
+      year: "2024",
+      href: "/remix-the-archive"
+    },
+    {
+      title: "Alusta Space",
+      description: "An old office building transformed into a modern and versatile gallery space",
+      year: "2024",
+      href: "/alusta-space"
+    },
+    {
+      title: "Combine24",
+      description: "A pioneering digital art competition elevating Finland's national art collection",
+      year: "2024",
+      href: "/combine24"
+    },
+    {
+      title: "Alusta.art",
+      description: "A decentralized art platform built on the Zora protocol",
+      year: "2023",
+      href: "/alusta"
+    },
+    {
+      title: "Metaspace",
+      description: "A WebGL-powered platform for virtual art exhibitions",
+      year: "2022",
+      href: "/metaspace"
+    }
+  ]
+
+  return (
+    <div className="flex flex-col items-center pt-8">
+      <div className="w-[90%] md:w-[800px] px-4 md:px-0">
+        <header className="mb-16">
+          <h1 className="text-[22px] font-bold mb-2 text-black">Alvar Mahlberg</h1>
+          <nav className="flex gap-6">
+            <button 
+              onClick={() => setActiveView("projects")}
+              className={`text-[15px] ${activeView === "projects" ? "text-black font-bold" : "text-gray-500"}`}
+            >
+              Projects
+            </button>
+            <button 
+              onClick={() => setActiveView("about")}
+              className={`text-[15px] ${activeView === "about" ? "text-black font-bold" : "text-gray-500"}`}
+            >
+              About
+            </button>
+          </nav>
+        </header>
+
+        {activeView === "projects" ? (
+          <>
+            <div className="space-y-6">
+              {articles.map((article) => (
+                <article key={article.title} className="flex items-baseline">
+                  <Link href={article.href} className="group w-full">
+                    <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
+                      <div className="flex items-baseline gap-2">
+                        <h2 className="text-[20px] font-bold hover:underline underline-offset-4 text-black">
+                          {article.title}
+                        </h2>
+                        <span className="md:hidden text-[13px] text-gray-400">
+                          {article.year}
+                        </span>
+                      </div>
+                      <span className="text-[11px] whitespace-nowrap overflow-hidden text-ellipsis md:text-[15px] md:whitespace-normal text-gray-500 md:mx-2">
+                        <span className="hidden md:inline">— </span>{article.description}
+                      </span>
+                      <span className="hidden md:inline text-[15px] text-gray-400">
+                        {article.year}
+                      </span>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mt-20 pb-16">
+              <div className="aspect-square relative">
+                <Image
+                  src="/image1.jpg"
+                  alt="Artwork 1"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="aspect-square relative">
+                <Image
+                  src="/image2.jpg"
+                  alt="Artwork 2"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="aspect-square relative">
+                <Image
+                  src="/image3.jpg"
+                  alt="Artwork 3"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+            <div className="w-full md:w-[300px] aspect-[3/4] relative flex-shrink-0">
+              <Image
+                src="/profile.jpg"
+                alt="Alvar Mahlberg"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            
+            <div className="text-[20px] space-y-6 text-black">
+              <p>
+                I lead ambitious projects and teams at the intersection of art, culture, and technology.
+              </p>
+              <p>
+                I’m currently working on projects that redefine museum practices by integrating emerging technologies, digital art, and agile exhibition models to create more dynamic and accessible cultural experiences.
+              </p>
+              <p>
+                I grew up in Helsinki and studied Information Systems Science at the University of Jyväskylä.
+              </p>
+              <p>
+                You can reach me at <a href="mailto:alvar@example.com" className="underline">alvarmahlberg@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

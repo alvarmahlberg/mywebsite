@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 55, 65, 81;
+  --background-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +15,23 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  line-height: 28px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Lisää linkkien hover-efekti */
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
