@@ -10,35 +10,35 @@ export default function Home() {
     {
       title: "RMXTA Helsinki",
       description: "A large-scale generative art exhibition developed from concept to completion",
-      mobileDescription: "Generative art exhibition from concept to completion",
+      mobileDescription: "A generative art exhibition from concept to completion",
       year: "2024",
       href: "/remix-the-archive"
     },
     {
       title: "Alusta Space",
       description: "An old office building transformed into a modern and versatile gallery space",
-      mobileDescription: "Old office building converted into a modern gallery space",
+      mobileDescription: "An old office building converted into a modern gallery space",
       year: "2024",
       href: "/alusta-space"
     },
     {
       title: "Combine24",
       description: "A pioneering digital art competition elevating Finland's national art collection",
-      mobileDescription: "Digital art competition based on national art collection",
+      mobileDescription: "A digital art competition based on national art collection",
       year: "2024",
       href: "/combine24"
     },
     {
       title: "Alusta.art",
       description: "A decentralized art platform built on the Zora protocol",
-      mobileDescription: "Decentralized art platform built on the Zora protocol",
+      mobileDescription: "A decentralized art platform built on the Zora protocol",
       year: "2023",
       href: "/alusta"
     },
     {
       title: "Metaspace",
       description: "A WebGL-powered platform for virtual art exhibitions",
-      mobileDescription: "WebGL-powered platform for virtual art exhibitions",
+      mobileDescription: "A WebGL-powered platform for virtual art exhibitions",
       year: "2022",
       href: "/metaspace"
     }

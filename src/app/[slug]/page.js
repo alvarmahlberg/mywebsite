@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const projects = {
   'remix-the-archive': {
@@ -10,6 +11,8 @@ const projects = {
 
       The platform uses advanced machine learning models to analyze and transform historical materials while preserving their cultural significance.
 
+      [VIDEOS]
+
       Key features of the platform include:
       - AI-powered content analysis and transformation
       - Collaborative creation tools
@@ -18,7 +21,10 @@ const projects = {
 
       We're currently working with several museums and archives to pilot the platform and develop best practices for AI-enhanced cultural heritage preservation.
 
+      [IMAGES]
+
       The project has already received significant interest from cultural institutions and we're planning to launch a public beta version in late 2024.
+      The platform uses advanced machine learning models to analyze and transform historical materials while preserving their cultural significance.
     `
   },
   'alusta-space': {
@@ -63,24 +69,78 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }) {
-  const project = projects[params.slug];
+export default async function ProjectPage({ params }) {
+  const { slug } = params;
+  
+  const project = projects[slug];
 
   if (!project) {
     return <div>Project not found</div>;
   }
 
   return (
-    <div className="flex flex-col items-center pt-16">
-      <div className="w-[800px]">
-        <div className="mb-16">
+    <div className="flex flex-col items-center pt-8 md:pt-16">
+      <div className="w-[90%] md:w-[800px] px-4 md:px-0">
+        <div className="mb-12 md:mb-16">
           <div className="text-gray-600 mb-2">
             {project.date} by <Link href="/" className="underline hover:text-black">{project.author}</Link>
           </div>
-          <h1 className="text-[48px] font-bold text-black mb-12">{project.title}</h1>
+          <h1 className="text-[32px] md:text-[48px] font-bold text-black mb-8 md:mb-12">{project.title}</h1>
           
           <div className="prose prose-lg max-w-none text-gray-600">
             {project.content.split('\n\n').map((paragraph, index) => {
+              if (paragraph.trim() === '[VIDEOS]') {
+                return (
+                  <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-12">
+                    <div className="aspect-[9/16] relative">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      >
+                        <source src="/rmxta-video1.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                    <div className="aspect-[9/16] relative">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover"
+                      >
+                        <source src="/rmxta-video2.mp4" type="video/mp4" />
+                      </video>
+                    </div>
+                  </div>
+                );
+              }
+              if (paragraph.trim() === '[IMAGES]') {
+                return (
+                  <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-12">
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/rmxta1.jpg"
+                        alt="RMXTA Exhibition 1"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/rmxta2.jpg"
+                        alt="RMXTA Exhibition 2"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+                );
+              }
               if (paragraph.includes('- ')) {
                 const items = paragraph.split('\n');
                 return (
