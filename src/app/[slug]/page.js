@@ -7,27 +7,13 @@ const projects = {
     date: 'February 6, 2024',
     author: 'Alvar Mahlberg',
     content: `
-      A few weeks ago, I started developing a new AI-powered platform for remixing and reinterpreting archival content. The goal is to make cultural heritage more accessible and interactive through modern technology.
+    [LAAJAKUVA]
 
-      The platform uses advanced machine learning models to analyze and transform historical materials while preserving their cultural significance.
+    [KAKSI_KUVAA]
 
-      [VIDEOS]
+    [UUSI_KUVA]
 
-      Key features of the platform include:
-      - AI-powered content analysis and transformation
-      - Collaborative creation tools
-      - Digital preservation standards compliance
-      - Real-time visualization of archival data
-
-      We're currently working with several museums and archives to pilot the platform and develop best practices for AI-enhanced cultural heritage preservation.
-
-      [IMAGES]
-
-      The project has already received significant interest from cultural institutions and we're planning to launch a public beta version in late 2024.
-
-      [NEW_VIDEOS]
-
-      The platform uses advanced machine learning models to analyze and transform historical materials while preserving their cultural significance.
+    [PYSTYKUVAT]
     `
   },
   'alusta-space': {
@@ -53,15 +39,12 @@ const projects = {
     date: 'March 21, 2021',
     author: 'Alvar Mahlberg',
     content: `
-      Combine24 is an innovative approach to combining blockchain technology with traditional financial systems. The project aims to bridge the gap between decentralized finance and established banking infrastructure.
+      
+      [NEW_IMAGE]
 
-      The platform provides:
-      - Seamless integration between crypto and fiat currencies
-      - Automated regulatory compliance
-      - Real-time transaction monitoring
-      - Advanced security features
+      [SECOND_IMAGE]
 
-      We've partnered with several financial institutions to ensure the platform meets all necessary regulatory requirements while maintaining the flexibility and innovation potential of blockchain technology.
+      [THIRD_IMAGE]
     `
   },
   'alusta-art': {
@@ -107,9 +90,8 @@ export function generateStaticParams() {
 }
 
 export default async function ProjectPage({ params }) {
-  const { slug } = params;
-  
-  const project = projects[slug];
+  await Promise.resolve();
+  const project = projects[params.slug];
 
   if (!project) {
     return <div>Project not found</div>;
@@ -126,82 +108,7 @@ export default async function ProjectPage({ params }) {
           
           <div className="prose prose-lg max-w-none text-gray-600">
             {project.content.split('\n\n').map((paragraph, index) => {
-              if (paragraph.trim() === '[VIDEOS]') {
-                return (
-                  <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-12">
-                    <div className="aspect-[9/16] relative">
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover"
-                      >
-                        <source src="/rmxta-video3.mp4" type="video/mp4" />
-                      </video>
-                    </div>
-                    <div className="aspect-[9/16] relative">
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover"
-                      >
-                        <source src="/rmxta-video2.mp4" type="video/mp4" />
-                      </video>
-                    </div>
-                  </div>
-                );
-              }
-              if (paragraph.trim() === '[IMAGES]') {
-                return (
-                  <div key={index} className="my-12">
-                    <div className="aspect-square relative">
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                      >
-                        <source src="/rmxta-video3.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  </div>
-                );
-              }
-              if (paragraph.trim() === '[NEW_VIDEOS]') {
-                return (
-                  <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-12">
-                    <div className="aspect-square relative">
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                      >
-                        <source src="/rmxta-video3.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                    <div className="aspect-square relative md:block hidden">
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                      >
-                        <source src="/rmxta-video3.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  </div>
-                );
-              }
+            
               if (paragraph.includes('- ')) {
                 const items = paragraph.split('\n');
                 return (
@@ -212,7 +119,7 @@ export default async function ProjectPage({ params }) {
                   </ul>
                 );
               }
-              if (paragraph.trim() === '[NEW_IMAGE]' && slug === 'metaspace') {
+              if (paragraph.trim() === '[NEW_IMAGE]' && params.slug === 'metaspace') {
                 return (
                   <div key={index} className="my-12">
                     <div className="aspect-[4/3] relative">
@@ -234,7 +141,7 @@ export default async function ProjectPage({ params }) {
                   <div key={index} className="my-12">
                     <div className="aspect-square relative">
                       <Image
-                        src="/alusta-space3.jpg"
+                        src="/combine24-1.jpg"
                         alt="Alusta Space Gallery"
                         fill
                         className="object-cover"
@@ -248,13 +155,16 @@ export default async function ProjectPage({ params }) {
                 return (
                   <div key={index} className="my-12">
                     <div className="aspect-square relative">
-                      <Image
-                        src="/alusta-space2.jpg"
-                        alt="Alusta Space Interior"
-                        fill
-                        className="object-cover"
-                        priority
-                      />
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source src="/combine24-video1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                   </div>
                 );
@@ -266,6 +176,87 @@ export default async function ProjectPage({ params }) {
                       <Image
                         src="/alusta-space.jpg"
                         alt="Alusta Space Lighting"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+                );
+              }
+              if (paragraph.trim() === '[LAAJAKUVA]') {
+                return (
+                  <div key={index} className="my-12">
+                    <div className="aspect-[4/3] relative">
+                      <Image
+                        src="/uusikuva.jpg"
+                        alt="RMXTA Project Wide"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+                );
+              }
+              if (paragraph.trim() === '[KAKSI_KUVAA]') {
+                return (
+                  <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-12">
+                    <div className="aspect-square relative">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source src="/Controller.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <div className="aspect-square relative md:block hidden">
+                      <Image
+                        src="/rmxta4.jpg"
+                        alt="RMXTA Project Square 2"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+                );
+              }
+              if (paragraph.trim() === '[UUSI_KUVA]') {
+                return (
+                  <div key={index} className="my-12">
+                    <div className="aspect-[4/3] relative">
+                      <Image
+                        src="/etusivu1.jpg"
+                        alt="RMXTA Project Additional"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+                );
+              }
+              if (paragraph.trim() === '[PYSTYKUVAT]') {
+                return (
+                  <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-12">
+                    <div className="aspect-[2/3] relative">
+                      <Image
+                        src="/rmxta5.jpg"
+                        alt="RMXTA Project Portrait 1"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                    <div className="aspect-[2/3] relative md:block hidden">
+                      <Image
+                        src="/rmxta6.jpg"
+                        alt="RMXTA Project Portrait 2"
                         fill
                         className="object-cover"
                         priority

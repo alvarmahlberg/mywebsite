@@ -152,6 +152,14 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        <div className="border-t border-gray-200 pt-8 pb-12 md:pb-16">
+          <div className="text-gray-500">
+            <Link href="mailto:alvar@fng.fi" className="hover:text-black transition-colors">
+              alvar@fng.fi
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
