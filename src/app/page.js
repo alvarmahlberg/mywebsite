@@ -33,7 +33,7 @@ export default function Home() {
       description: "A decentralized art platform built on the Zora protocol",
       mobileDescription: "A decentralized art platform built on the Zora protocol",
       year: "2023",
-      href: "/alusta"
+      href: "/alusta-art"
     },
     {
       title: "Metaspace",
@@ -106,7 +106,7 @@ export default function Home() {
               </div>
               <div className="aspect-square relative">
                 <Image
-                  src="/image2.jpg"
+                  src="/alusta-space3.jpg"
                   alt="Artwork 2"
                   fill
                   className="object-cover"
@@ -141,13 +141,14 @@ export default function Home() {
                 I lead ambitious projects and teams at the intersection of art, culture, and technology.
               </p>
               <p>
-                I'm currently working on projects that redefine museum practices by integrating emerging technologies, digital art, and agile exhibition models to create more dynamic and accessible cultural experiences.
+                I'm interested in projects that redefine museum practices by integrating emerging technologies, digital art, and agile exhibition models to create more dynamic and accessible cultural experiences.
               </p>
               <p>
                 I grew up in Helsinki and studied Information Systems Science at the University of Jyväskylä.
               </p>
               <p>
-                You can reach me at <a href="mailto:alvar@example.com" className="underline">alvarmahlberg@gmail.com</a>
+                I currently work for the Finnish National Gallery.<br />
+                You can reach me at <a href="mailto:alvar.mahlberg@fng.fi" className="underline">alvar.mahlberg@fng.fi</a>
               </p>
             </div>
           </div>
@@ -155,8 +156,8 @@ export default function Home() {
 
         <div className="border-t border-gray-200 pt-8 pb-12 md:pb-16">
           <div className="text-gray-500">
-            <Link href="mailto:alvar@fng.fi" className="hover:text-black transition-colors">
-              alvar@fng.fi
+            <Link href="mailto:alvar.mahlberg@fng.fi" className="hover:text-black transition-colors">
+            
             </Link>
           </div>
         </div>
