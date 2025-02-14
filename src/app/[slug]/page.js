@@ -6,7 +6,12 @@ const projects = {
     title: 'RMXTA Helsinki',
     date: 'February 6, 2024',
     author: 'Alvar Mahlberg',
-    team: 'Team: Mitja Kaipiainen, Anna Puhakka, Milla Paananen, Erno Forsström, Elias Hakala',
+    team: `**Team**
+System Design: Mitja Kaipiainen
+Creative Direction: Erno Forsström
+Communications: Milla Paananen
+Production: Anna Puhakka
+Hardware: Elias Hakala`,
     content: `
     [LAAJAKUVA]
 
@@ -25,7 +30,10 @@ const projects = {
     title: 'Alusta Space',
     date: 'January 15, 2024',
     author: 'Alvar Mahlberg',
-    team: 'Team: Tuuli Kanerva, Leo Lindroos, Antti Soini, Niko Rissanen, Markku Huvilinna',
+    team: `**Team**
+Architecture: Tuuli Kanerva, Leo Lindroos, Antti Soini
+Construction: Niko Rissanen
+Electrical installation: Markku Huvilinna`,
     content: `
       [NEW_IMAGE]   
 
@@ -42,7 +50,12 @@ const projects = {
     title: 'Combine24',
     date: 'March 21, 2021',
     author: 'Alvar Mahlberg',
-    team: 'Team: Anna Puhakka, Mitja Kaipiainen, Johanna Eiramo, Milla Paananen, Rasmus Haikka, Antoine Paikert, Erno Forsström',
+    team: `**Team**
+Producer: Anna Puhakka
+System Designer: Mitja Kaipiainen
+Production: Milla Paananen
+Website: Rasmus Haikka 
+Visual identity: Antoine Paikert`,
     content: `
       [NELIO_KUVA]
 
@@ -59,7 +72,15 @@ const projects = {
     title: 'Alusta.art',
     date: 'September 15, 2023',
     author: 'Alvar Mahlberg',
-    team: 'Team: Mitja Kaipiainen, Anna Puhakka, Marja Konttinen, Antoine Paikert, Joni Stanley, Veera Almila, Juho Vesanen, Kasper Tontti, Erno Forsström, Manu Matila, Kai-Markus Lehtimäki, Artur Veselovski',
+    team: `**Team**
+Lead Developer: Kasper Tontti
+System Architect: Kai-Markus Lehtimäki
+Software Development: Artur Veselovski
+UI: Erno Forsström
+Smart Contracts: Manu Matila
+Brand Identity: Antoine Paikert, Joni Stanley
+Creative Direction: Veera Almila, Juho Vesanen
+Partnerships: Marja Konttinen`,
     content: `
       [ALUSTA_INTRO_KUVA]
 
@@ -200,13 +221,16 @@ export default async function ProjectPage({ params }) {
             </video>
           </div>
           <div className="aspect-square relative md:block hidden">
-            <Image
-              src="/rmxta4.jpg"
-              alt="RMXTA Project Square 2"
-              fill
-              className="object-cover"
-              priority
-            />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/rmxta-video1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       );
@@ -408,9 +432,11 @@ export default async function ProjectPage({ params }) {
         </div>
 
         <div className="border-t border-gray-200 pt-8 mt-16">
-          <p className="text-[10px] md:text-[14px] text-gray-900 mb-8">
-            {project.team}
-          </p>
+          <pre className="text-[10px] md:text-[14px] text-gray-900 mb-8 font-sans whitespace-pre-wrap">
+            <span className="font-bold">Team</span>
+            {'\n'}
+            {project.team.replace('**Team**\n', '')}
+          </pre>
           
           <Link 
             href="/" 
