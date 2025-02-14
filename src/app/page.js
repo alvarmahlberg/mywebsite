@@ -141,13 +141,13 @@ export default function Home() {
                 I lead ambitious projects and teams at the intersection of art, culture, and technology.
               </p>
               <p>
-                I'm interested in projects that redefine museum practices by integrating emerging technologies, digital art, and agile exhibition models to create more dynamic and accessible cultural experiences.
+                I currently work for the Finnish National Gallery where we redefine museum practices by integrating emerging technologies, digital art, and agile exhibition models to create more dynamic and accessible cultural experiences.
               </p>
               <p>
                 I grew up in Helsinki and studied Information Systems Science at the University of Jyväskylä.
               </p>
               <p>
-                I currently work for the Finnish National Gallery.<br />
+                
                 You can reach me at <a href="mailto:alvar.mahlberg@fng.fi" className="underline">alvar.mahlberg@fng.fi</a>
               </p>
             </div>
