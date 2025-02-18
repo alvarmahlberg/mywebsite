@@ -4,10 +4,10 @@ import Image from 'next/image';
 const projects = {
   'remix-the-archive': {
     title: 'RMXTA Helsinki',
-    date: 'February 6, 2024',
+    date: 'December 13, 2024',
     author: 'Alvar Mahlberg',
     team: `**Team**
-System Design: Mitja Kaipiainen
+Systems Design: Mitja Kaipiainen
 Creative Direction: Erno Forsström
 Communications: Milla Paananen
 Production: Anna Puhakka
@@ -15,11 +15,11 @@ Hardware: Elias Hakala`,
     content: `
     [LAAJAKUVA]
 
-    Remix The Archive exhibition explores the intersection of tradition and technology through ten generative artworks that reinterpret traditional techniques in a digital context. The exhibition invites visitors to engage directly with the works using custom remix controllers, fostering interaction and transformation.
+    Remix The Archive exhibition explores the intersection of tradition and technology through ten generative artworks. The exhibition invites visitors to engage directly with the algorithms using custom remix controllers.
 
     [KAKSI_KUVAA]
 
-    Themes such as cultural memory, portraiture, landscapes, and artistic representation are examined, challenging the boundaries between digital and physical art. More than just a display, the exhibition sparks a dynamic conversation on how technology reshapes artistic heritage and collective creativity..
+    Themes such as cultural memory, portraiture, landscapes, and artistic representation are examined, challenging the boundaries between digital and physical art. The exhibition sparks a dynamic conversation on how technology reshapes artistic heritage and collective creativity.
 
     [UUSI_KUVA]
 
@@ -28,55 +28,62 @@ Hardware: Elias Hakala`,
   },
   'alusta-space': {
     title: 'Alusta Space',
-    date: 'January 15, 2024',
+    date: 'September 15, 2024',
     author: 'Alvar Mahlberg',
     team: `**Team**
-Architecture: Tuuli Kanerva, Leo Lindroos, Antti Soini
+Space Design: Tuuli Kanerva, Leo Lindroos, Antti Soini
 Construction: Niko Rissanen
 Electrical installation: Markku Huvilinna`,
     content: `
       [NEW_IMAGE]   
 
-      The space features multiple exhibition areas, each designed to showcase different aspects of digital art and interactive installations. Our focus has been on creating flexible spaces that can adapt to various types of presentations while maintaining optimal viewing conditions for digital works.
+      A former 1980s office building was transformed into a modern gallery space, with the renovation focusing on sustainable materials and the versatility of the space.
 
       [SECOND_IMAGE]
 
-      The lighting system combines natural and artificial sources, creating an optimal environment for both digital displays and physical artworks. The modular wall system allows for quick reconfigurations, enabling us to adapt the space for different types of exhibitions and events.
+      Sculptural curved walls bring a soft dynamism to the open, raw space. The shimmering, reflective stainless steel wall creates an immaterial-like boundary, completing the embrace-like enclosure formed by the curved walls through reflection.
 
       [THIRD_IMAGE]
     `
   },
   'combine24': {
     title: 'Combine24',
-    date: 'March 21, 2021',
+    date: 'September 1, 2024',
     author: 'Alvar Mahlberg',
     team: `**Team**
 Producer: Anna Puhakka
-System Designer: Mitja Kaipiainen
+Systems Designer: Mitja Kaipiainen
 Production: Milla Paananen
 Website: Rasmus Haikka 
-Visual identity: Antoine Paikert`,
+Visual identity: Antoine Paikert
+Posters: Erno Forsström`,
     content: `
       [NELIO_KUVA]
 
-      Combine24 is a digital art competition that brings together emerging artists and Finland's national art collection. The project explores new ways of interpreting and transforming traditional artworks through contemporary digital tools and creative coding.
+      A new digital art competition with the goal of increasing global awareness of Finland's art collection while highlighting the beauty of algorithms and generative art. Participants from over 45+ countries.
+
+      [COMBINE_KUVA]
+
+      Participants used the public domain portion of Finland's digitized art collection—tens of thousands of images, objects, and metadata—as the foundation for their generative artworks.
+
+      [COMBINE_VIDEO_3]
+
+      Organized in collaboration with [Highlight.xyz](https://highlight.xyz), the competition generated over $30,000 in sales for the artists in addition to the prize money. Shortlisted works can be seen [here](https://highlight.xyz/curated/combine24).
 
       [KAKSI_VIDEOTA]
-
-      The competition attracted over 200 submissions from artists across Finland. Selected works were exhibited at Ateneum Art Museum, creating a dialogue between historical masterpieces and their contemporary digital interpretations.
 
       [KAKSI_VIDEOTA_2]
     `
   },
   'alusta-art': {
     title: 'Alusta.art',
-    date: 'September 15, 2023',
+    date: 'December 15, 2023',
     author: 'Alvar Mahlberg',
     team: `**Team**
 Lead Developer: Kasper Tontti
 System Architect: Kai-Markus Lehtimäki
 Software Development: Artur Veselovski
-UI: Erno Forsström
+UI Designer: Erno Forsström
 Smart Contracts: Manu Matila
 Brand Identity: Antoine Paikert, Joni Stanley
 Creative Direction: Veera Almila, Juho Vesanen
@@ -84,7 +91,7 @@ Partnerships: Marja Konttinen`,
     content: `
       [ALUSTA_INTRO_KUVA]
 
-      Alusta.art is a decentralized art platform that leverages blockchain technology to create new opportunities for digital artists and collectors. The platform combines traditional art market mechanisms with web3 infrastructure, enabling direct artist-to-collector relationships and transparent provenance tracking.
+      Alusta.art is a decentralized art platform that leverages blockchain technology to create new opportunities for digital artists and collectors. The platform combines traditional art market mechanisms with web3 infrastructure, enabling direct artist-to-collector relationships and transparent provenance tracking. 
     `
   },
   'metaspace': {
@@ -127,8 +134,7 @@ export default async function ProjectPage({ params }) {
         </ul>
       );
     }
-    const slug = await params.slug;
-    if (paragraph.trim() === '[NEW_IMAGE]' && slug === 'metaspace') {
+    if (paragraph.trim() === '[NEW_IMAGE]' && params.slug === 'metaspace') {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative">
@@ -148,10 +154,10 @@ export default async function ProjectPage({ params }) {
     } else if (paragraph.trim() === '[NEW_IMAGE]') {
       return (
         <div key={index}>
-          <div className="aspect-square relative">
+          <div className="aspect-[5/4] relative">
             <Image
-              src="/alusta-space3.jpg"
-              alt="Alusta Space Gallery"
+              src="/alustaspace4.jpg"
+              alt="Interior view of Alusta Space gallery"
               fill
               className="object-cover"
               priority
@@ -163,10 +169,10 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[SECOND_IMAGE]') {
       return (
         <div key={index}>
-          <div className="aspect-square relative">
+          <div className="aspect-[5/4] relative">
             <Image
-              src="/alusta-space2.jpg"
-              alt="Combine24 Second Image"
+              src="/alustaspace8.jpg"
+              alt="Curved wall detail in Alusta Space"
               fill
               className="object-cover"
               priority
@@ -180,8 +186,8 @@ export default async function ProjectPage({ params }) {
         <div key={index}>
           <div className="aspect-square relative">
             <Image
-              src="/alusta-space.jpg"
-              alt="Alusta Space Lighting"
+              src="/alusta-space2.jpg"
+              alt="Reflective stainless steel wall in Alusta Space"
               fill
               className="object-cover"
               priority
@@ -196,7 +202,7 @@ export default async function ProjectPage({ params }) {
           <div className="aspect-[4/3] relative">
             <Image
               src="/rmxta2.jpg"
-              alt="RMXTA Project Wide"
+              alt="RMXTA exhibition overview"
               fill
               className="object-cover"
               priority
@@ -208,7 +214,7 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[KAKSI_KUVAA]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-          <div className="aspect-square relative">
+          <div className="aspect-square relative md:block hidden">
             <video
               autoPlay
               loop
@@ -216,11 +222,11 @@ export default async function ProjectPage({ params }) {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="/Controller.mp4" type="video/mp4" />
+              <source src="/juliste.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
-          <div className="aspect-square relative md:block hidden">
+          <div className="aspect-square relative">
             <video
               autoPlay
               loop
@@ -241,7 +247,7 @@ export default async function ProjectPage({ params }) {
           <div className="aspect-square relative">
             <Image
               src="/image1.jpg"
-              alt="RMXTA Project Additional"
+              alt="Interactive installation at RMXTA exhibition"
               fill
               className="object-cover"
               priority
@@ -252,20 +258,20 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[PYSTYKUVAT]') {
       return (
-        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           <div className="aspect-[2/3] relative">
             <Image
               src="/image6.jpg"
-              alt="RMXTA Project Portrait 1"
+              alt="RMXTA exhibition controller detail"
               fill
               className="object-cover"
               priority
             />
           </div>
-          <div className="aspect-[2/3] relative md:block hidden">
+          <div className="aspect-[2/3] relative">
             <Image
               src="/taso.jpg"
-              alt="RMXTA Project Portrait 2"
+              alt="RMXTA exhibition display setup"
               fill
               className="object-cover"
               priority
@@ -286,8 +292,8 @@ export default async function ProjectPage({ params }) {
         <div key={index}>
           <div className="aspect-square relative">
             <Image
-              src="/combineseina.jpg"
-              alt="Alusta.art Platform"
+              src="/CombineNelio.jpg"
+              alt="Combine24 competition artwork"
               fill
               className="object-cover"
               priority
@@ -298,50 +304,44 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[KAKSI_VIDEOTA]') {
       return (
-        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           <div className="aspect-square relative">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/shaderism.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <Image
+              src="/claudio.jpg"
+              alt="Generative artwork by Claudio"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
-          <div className="aspect-square relative md:block hidden">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/ilmojaaarni.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="aspect-square relative">
+            <Image
+              src="/koli.jpg"
+              alt="Generative artwork inspired by Koli landscapes"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       );
     }
     if (paragraph.trim() === '[KAKSI_VIDEOTA_2]') {
       return (
-        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           <div className="aspect-square relative">
             <Image
-              src="/jeres.jpg"
-              alt="Combine24 Additional Image 1"
+              src="/jeres1.jpg"
+              alt="Generative artwork by Jeres"
               fill
               className="object-cover"
               priority
             />
           </div>
-          <div className="aspect-square relative md:block hidden">
+          <div className="aspect-square relative">
             <Image
-              src="/trip2.jpg"
-              alt="Combine24 Additional Image 2"
+              src="/roni.jpg"
+              alt="Generative artwork by Roni"
               fill
               className="object-cover"
               priority
@@ -374,7 +374,7 @@ export default async function ProjectPage({ params }) {
           <div className="aspect-square relative">
             <Image
               src="/workshop.jpg"
-              alt="Alusta.art Platform Interface"
+              alt="Alusta.art platform workshop session"
               fill
               className="object-cover"
               priority
@@ -389,7 +389,7 @@ export default async function ProjectPage({ params }) {
           <div className="aspect-[16/9] relative">
             <Image
               src="/platform.jpg"
-              alt="Alusta Studio"
+              alt="Alusta.art platform interface"
               fill
               className="object-cover"
               priority
@@ -404,13 +404,76 @@ export default async function ProjectPage({ params }) {
           <div className="aspect-[16/9] relative">
             <Image
               src="/metaspace1.jpg"
-              alt="Metaspace Platform Interface"
+              alt="Metaspace virtual gallery environment"
               fill
               className="object-cover"
               priority
             />
           </div>
         </div>
+      );
+    }
+    if (paragraph.trim() === '[COMBINE_KUVA]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[2/1] relative border border-gray-200">
+            <Image
+              src="/collection.jpg"
+              alt="Combine24 Exhibition"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[COMBINE_VIDEO_3]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[4/3] relative border border-gray-200">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/blas.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.includes('**')) {
+      const parts = paragraph.split('**');
+      return (
+        <p key={index}>
+          {parts.map((part, i) => 
+            i % 2 === 0 ? part : <strong key={i}>{part}</strong>
+          )}
+        </p>
+      );
+    }
+    if (paragraph.includes('[') && paragraph.includes('](')) {
+      const parts = paragraph.split(/\[|\]|\(|\)/);
+      return (
+        <p key={index}>
+          {parts.reduce((acc, part, i) => {
+            if (i % 4 === 1) {
+              const linkUrl = parts[i + 2];
+              return [...acc, 
+                <Link key={i} href={linkUrl} className="underline hover:text-black" target="_blank">
+                  {part}
+                </Link>
+              ];
+            } else if (i % 4 === 0) {
+              return [...acc, part];
+            }
+            return acc;
+          }, [])}
+        </p>
       );
     }
     return <p key={index}>{paragraph.trim()}</p>;

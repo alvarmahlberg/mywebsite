@@ -10,7 +10,7 @@ export default function Home() {
     {
       title: "RMXTA Helsinki",
       description: "A large-scale generative art exhibition developed from concept to completion",
-      mobileDescription: "A generative art exhibition from concept to completion",
+      mobileDescription: "A full-scale generative art exhibition from concept to completion",
       year: "2024",
       href: "/remix-the-archive"
     },
@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center pt-8">
-      <div className="w-[90%] md:w-[800px] px-4 md:px-0">
+      <div className="w-[90%] md:w-[800px] px-4 md:px-0 pb-12 md:pb-16">
         <header className="mb-16">
           <h1 className="text-[22px] font-bold mb-2 text-black">Alvar Mahlberg</h1>
           <nav className="flex gap-6">
@@ -106,7 +106,7 @@ export default function Home() {
               </div>
               <div className="aspect-square relative">
                 <Image
-                  src="/alusta-space3.jpg"
+                  src="/alustanelio.jpg"
                   alt="Artwork 2"
                   fill
                   className="object-cover"
@@ -136,7 +136,7 @@ export default function Home() {
               />
             </div>
             
-            <div className="text-[20px] space-y-6 text-black">
+            <div className="text-[20px] space-y-6 text-gray-600">
               <p>
                 I lead ambitious projects and teams at the intersection of art, culture, and technology.
               </p>
@@ -147,20 +147,11 @@ export default function Home() {
                 I grew up in Helsinki and studied Information Systems Science at the University of Jyväskylä.
               </p>
               <p>
-                
                 You can reach me at <a href="mailto:alvar.mahlberg@fng.fi" className="underline">alvar.mahlberg@fng.fi</a>
               </p>
             </div>
           </div>
         )}
-
-        <div className="border-t border-gray-200 pt-8 pb-12 md:pb-16">
-          <div className="text-gray-500">
-            <Link href="mailto:alvar.mahlberg@fng.fi" className="hover:text-black transition-colors">
-            
-            </Link>
-          </div>
-        </div>
       </div>
     </div>
   );
