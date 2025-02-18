@@ -11,7 +11,8 @@ Systems Design: Mitja Kaipiainen
 Creative Direction: Erno Forsström
 Communications: Milla Paananen
 Production: Anna Puhakka
-Hardware: Elias Hakala`,
+Hardware: Elias Hakala
+Photos: Juho Huttunen`,
     content: `
       [LAAJAKUVA]
 
@@ -155,7 +156,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-[5/4] relative">
-            <MediaWrapper creator="Stone bench and counter">
+            <MediaWrapper creator="">
               <Image
                 src="/alustaspace4.jpg"
                 alt="Interior view of Alusta Space gallery"
@@ -172,7 +173,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-[5/4] relative">
-            <MediaWrapper creator="Curved walls and main area">
+            <MediaWrapper creator="">
               <Image
                 src="/alustaspace8.jpg"
                 alt="Curved wall detail in Alusta Space"
@@ -189,7 +190,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-[3/4] relative">
-            <MediaWrapper creator="Reflective stainless steel wall">
+            <MediaWrapper creator="">
               <Image
                 src="/alusta-space2.jpg"
                 alt="Reflective stainless steel wall in Alusta Space"
@@ -206,7 +207,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative">
-            <MediaWrapper creator="Remix the Archive exhibition. Photos: Juho Huttunen">
+            <MediaWrapper creator="Remix the Archive Exhibition in Vallila, Helsinki">
               <Image
                 src="/rmxta2.jpg"
                 alt="RMXTA exhibition overview"
@@ -221,7 +222,7 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[VAALEA_KUVA]') {
       return (
-        <div key={index}>
+        <div key={index} className="hidden md:block">
           <div className="aspect-[4/3] relative">
             <MediaWrapper creator="Exhibition Posters by Erno Forsström">
               <Image
@@ -239,7 +240,7 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[KAKSI_KUVAA]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-          <div className="aspect-[3/4] relative">
+          <div className="aspect-[3/4] relative md:block hidden">
             <MediaWrapper creator="Poster video by Milla Paananen">
               <video
                 autoPlay
@@ -337,7 +338,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-square relative">
-            <MediaWrapper creator="Combine24 posters by Erno Forsström">
+            <MediaWrapper creator="">
               <Image
                 src="/CombineNelio.jpg"
                 alt="Combine24 competition artwork"
@@ -354,7 +355,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative border border-gray-200">
-            <MediaWrapper creator="Combine website by Rasmus Haikka" darkText>
+            <MediaWrapper creator="" darkText>
               <Image
                 src="/aikataulu.jpg"
                 alt="Combine24 timeline"
@@ -371,7 +372,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative border border-gray-200">
-            <MediaWrapper creator="highlight.xyz" darkText>
+            <MediaWrapper creator="" darkText>
               <video
                 autoPlay
                 loop
@@ -389,8 +390,8 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[KAKSI_VIDEOTA]') {
       return (
-        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
-          <div className="aspect-square relative md:block hidden">
+        <div key={index} className="hidden md:grid md:grid-cols-2 gap-4 md:gap-4">
+          <div className="aspect-square relative">
             <MediaWrapper creator="Perseverance by Blas.v">
               <Image
                 src="/claudio.jpg"
@@ -419,8 +420,8 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[KAKSI_VIDEOTA_2]') {
       return (
-        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
-          <div className="aspect-square relative md:block hidden">
+        <div key={index} className="hidden md:grid md:grid-cols-2 gap-4 md:gap-4">
+          <div className="aspect-square relative">
             <MediaWrapper creator="Repetition and Noise by Jeres">
               <Image
                 src="/jeres1.jpg"
@@ -552,7 +553,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-[2/1] relative">
-            <MediaWrapper creator="Alusta.art platform">
+            <MediaWrapper creator="">
               <video
                 autoPlay
                 loop
