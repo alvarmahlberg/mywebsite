@@ -15,11 +15,13 @@ Hardware: Elias Hakala`,
     content: `
       [LAAJAKUVA]
 
-      [KAKSI_KUVAA]
-
       [UUSI_KUVA]
 
       [PYSTYKUVAT]
+
+      [VAALEA_KUVA]
+
+      [KAKSI_KUVAA]
     `
   },
   'alusta-space': {
@@ -29,7 +31,8 @@ Hardware: Elias Hakala`,
     team: `**Team**
 Space Design: Tuuli Kanerva, Leo Lindroos, Antti Soini
 Construction: Niko Rissanen
-Electrical installation: Markku Huvilinna`,
+Electrical installation: Markku Huvilinna
+Photos: Kalle Kouhia`,
     content: `
       [NEW_IMAGE]   
 
@@ -68,16 +71,18 @@ Posters: Erno Forsström`,
     team: `**Team**
 Lead Developer: Kasper Tontti
 System Architect: Kai-Markus Lehtimäki
-Software Development: Artur Veselovski
+Software Development: Artur Veselovski, Manu Matila
 UI Designer: Erno Forsström
-Smart Contracts: Manu Matila
 Brand Identity: Antoine Paikert, Joni Stanley
 Creative Direction: Veera Almila, Juho Vesanen
+FNG: Mitja Kaipiainen, Anna Puhakka
 Partnerships: Marja Konttinen`,
     content: `
-      [ALUSTA_INTRO_KUVA]
+      [ALUSTA_VAAKA]
 
-      [ALUSTA_NELIO]
+      [ALUSTA_NELIO_VIDEO]
+
+      [ALUSTA_VIDEO]
     `
   },
   'metaspace': {
@@ -99,7 +104,19 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params: { slug } }) {
+const MediaWrapper = ({ children, creator, darkText }) => (
+  <div className="group">
+    {children}
+    {creator && (
+      <div className={`opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-0 left-0 right-0 ${darkText ? 'text-black' : 'text-white'} p-2 text-[12px] md:text-[13px] pointer-events-none z-10`}>
+        {creator}
+      </div>
+    )}
+  </div>
+);
+
+export default async function ProjectPage({ params }) {
+  const { slug } = params;
   const project = projects[slug];
 
   if (!project) {
@@ -138,13 +155,15 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-[5/4] relative">
-            <Image
-              src="/alustaspace4.jpg"
-              alt="Interior view of Alusta Space gallery"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Stone bench and counter">
+              <Image
+                src="/alustaspace4.jpg"
+                alt="Interior view of Alusta Space gallery"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -153,13 +172,15 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-[5/4] relative">
-            <Image
-              src="/alustaspace8.jpg"
-              alt="Curved wall detail in Alusta Space"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Curved walls and main area">
+              <Image
+                src="/alustaspace8.jpg"
+                alt="Curved wall detail in Alusta Space"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -167,14 +188,16 @@ export default async function ProjectPage({ params: { slug } }) {
     if (paragraph.trim() === '[THIRD_IMAGE]') {
       return (
         <div key={index}>
-          <div className="aspect-square relative">
-            <Image
-              src="/alusta-space2.jpg"
-              alt="Reflective stainless steel wall in Alusta Space"
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="Reflective stainless steel wall">
+              <Image
+                src="/alusta-space2.jpg"
+                alt="Reflective stainless steel wall in Alusta Space"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -183,13 +206,32 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative">
-            <Image
-              src="/rmxta2.jpg"
-              alt="RMXTA exhibition overview"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Remix the Archive exhibition. Photos: Juho Huttunen">
+              <Image
+                src="/rmxta2.jpg"
+                alt="RMXTA exhibition overview"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[VAALEA_KUVA]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[4/3] relative">
+            <MediaWrapper creator="Exhibition Posters by Erno Forsström">
+              <Image
+                src="/vaaleakuva.jpg"
+                alt="RMXTA exhibition space"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -197,44 +239,61 @@ export default async function ProjectPage({ params: { slug } }) {
     if (paragraph.trim() === '[KAKSI_KUVAA]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-          <div className="aspect-square relative">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/juliste.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="Poster video by Milla Paananen">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/juliste.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </MediaWrapper>
           </div>
-          <div className="aspect-square relative">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/rmxta-video1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="Exhibition video by Milla Paananen">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/rmxta-video1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </MediaWrapper>
           </div>
         </div>
       );
     }
     if (paragraph.trim() === '[UUSI_KUVA]') {
       return (
-        <div key={index}>
+        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           <div className="aspect-[3/4] relative">
-            <Image
-              src="/image1.jpg"
-              alt="Interactive installation at RMXTA exhibition"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="The Artist Code by Shaderism">
+              <Image
+                src="/image1.jpg"
+                alt="Interactive installation at RMXTA exhibition"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="Portrait Robot by Roni Kaufman">
+              <Image
+                src="/uusikuva1.jpg"
+                alt="RMXTA exhibition detail"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -243,22 +302,26 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           <div className="aspect-[2/3] relative">
-            <Image
-              src="/image6.jpg"
-              alt="RMXTA exhibition controller detail"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Remix the Archive T-shirt by VAIN">
+              <Image
+                src="/image6.jpg"
+                alt="RMXTA exhibition controller detail"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
           <div className="aspect-[2/3] relative">
-            <Image
-              src="/taso.jpg"
-              alt="RMXTA exhibition display setup"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Remix the Archive controller by Elias Hakala">
+              <Image
+                src="/taso.jpg"
+                alt="RMXTA exhibition display setup"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -266,7 +329,7 @@ export default async function ProjectPage({ params: { slug } }) {
     if (paragraph.trim().startsWith('Team:')) {
       return (
         <p key={index} className="text-[12px] md:text-[14px] text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis">
-          {paragraph.trim()}
+          {paragraph.trim()}Elia
         </p>
       );
     }
@@ -274,13 +337,15 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-square relative">
-            <Image
-              src="/CombineNelio.jpg"
-              alt="Combine24 competition artwork"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Combine24 posters by Erno Forsström">
+              <Image
+                src="/CombineNelio.jpg"
+                alt="Combine24 competition artwork"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -289,13 +354,15 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative border border-gray-200">
-            <Image
-              src="/aikataulu.jpg"
-              alt="Combine24 timeline"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Combine website by Rasmus Haikka" darkText>
+              <Image
+                src="/aikataulu.jpg"
+                alt="Combine24 timeline"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -304,16 +371,18 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative border border-gray-200">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/blas.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <MediaWrapper creator="highlight.xyz" darkText>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/blas.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -321,23 +390,29 @@ export default async function ProjectPage({ params: { slug } }) {
     if (paragraph.trim() === '[KAKSI_VIDEOTA]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
-          <div className="aspect-square relative">
-            <Image
-              src="/claudio.jpg"
-              alt="Generative artwork by Claudio"
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="aspect-square relative md:block hidden">
+            <MediaWrapper creator="Perseverance by Blas.v">
+              <Image
+                src="/claudio.jpg"
+                alt="Generative artwork by Claudio"
+                data-creator="Perseverance by Blas.v"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
           <div className="aspect-square relative">
-            <Image
-              src="/tuomo.jpg"
-              alt="Generative artwork by Tuomo Rainio"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="A Dance With History by Newyellow" darkText>
+              <Image
+                src="/dance.jpg"
+                alt="Generative artwork by NewYellow"
+                data-creator="A Dance With History by Newyellow"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -345,23 +420,29 @@ export default async function ProjectPage({ params: { slug } }) {
     if (paragraph.trim() === '[KAKSI_VIDEOTA_2]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
-          <div className="aspect-square relative">
-            <Image
-              src="/jeres1.jpg"
-              alt="Generative artwork by Jeres"
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="aspect-square relative md:block hidden">
+            <MediaWrapper creator="Repetition and Noise by Jeres">
+              <Image
+                src="/jeres1.jpg"
+                alt="Generative artwork by Jeres"
+                data-creator="Repetition and Noise by Jeres"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
           <div className="aspect-square relative">
-            <Image
-              src="/roni.jpg"
-              alt="Generative artwork by Roni"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Portrait Robot by Roni Kaufman">
+              <Image
+                src="/roni.jpg"
+                alt="Generative artwork by Roni"
+                data-creator="Portrait Robot by Roni Kaufman"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -370,16 +451,18 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-square relative">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/alusta ig.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <MediaWrapper creator="Alusta.art platform release video by Erno Forsström">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/alusta ig.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -388,13 +471,15 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-square relative">
-            <Image
-              src="/alustataso.jpg"
-              alt="Alusta brand assets"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Alusta brand assets">
+              <Image
+                src="/alustataso.jpg"
+                alt="Alusta brand assets"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -403,13 +488,15 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-[16/9] relative">
-            <Image
-              src="/platform.jpg"
-              alt="Alusta.art platform interface"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Alusta.art platform interface">
+              <Image
+                src="/valko.jpg"
+                alt="Alusta.art platform interface"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -418,13 +505,15 @@ export default async function ProjectPage({ params: { slug } }) {
       return (
         <div key={index}>
           <div className="aspect-[16/9] relative">
-            <Image
-              src="/metaspace1.jpg"
-              alt="Metaspace virtual gallery environment"
-              fill
-              className="object-cover"
-              priority
-            />
+            <MediaWrapper creator="Metaspace">
+              <Image
+                src="/metaspace1.jpg"
+                alt="Metaspace virtual gallery environment"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
           </div>
         </div>
       );
@@ -459,6 +548,66 @@ export default async function ProjectPage({ params: { slug } }) {
         </p>
       );
     }
+    if (paragraph.trim() === '[ALUSTA_VAAKA]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[2/1] relative">
+            <MediaWrapper creator="Alusta.art platform">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/laajanaytto.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[ALUSTA_VIDEO]') {
+      return (
+        <div key={index}>
+          <div className="aspect-square relative">
+            <MediaWrapper creator="Alusta brand video by Antoine Paikert">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/alusta-brand.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[ALUSTA_NELIO_VIDEO]') {
+      return (
+        <div key={index}>
+          <div className="aspect-square relative">
+            <MediaWrapper creator="Alusta.art release video by Erno Forsström">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/alusta-flick.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
     return <p key={index}>{paragraph.trim()}</p>;
   };
 
@@ -479,7 +628,7 @@ export default async function ProjectPage({ params: { slug } }) {
 
         <div className="border-t border-gray-200 pt-8 mt-16">
           <pre className="text-[10px] md:text-[14px] text-gray-900 mb-8 font-sans whitespace-pre-wrap">
-            <span className="font-bold">Team</span>
+            <span className="font-bold">Project Team</span>
             {'\n'}
             {project.team.replace('**Team**\n', '')}
           </pre>

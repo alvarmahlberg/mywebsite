@@ -10,7 +10,7 @@ export default function Home() {
     {
       title: "RMXTA Helsinki",
       description: "A large-scale generative art exhibition from concept to completion",
-      mobileDescription: "A full-scale generative art exhibition from concept to completion",
+      mobileDescription: "A generative art exhibition from concept to completion",
       year: "2024",
       href: "/remix-the-archive"
     },
