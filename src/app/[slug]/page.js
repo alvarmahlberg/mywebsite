@@ -76,6 +76,8 @@ Creative Direction: Veera Almila, Juho Vesanen
 Partnerships: Marja Konttinen`,
     content: `
       [ALUSTA_INTRO_KUVA]
+
+      [ALUSTA_NELIO]
     `
   },
   'metaspace': {
@@ -195,7 +197,7 @@ export default async function ProjectPage({ params: { slug } }) {
     if (paragraph.trim() === '[KAKSI_KUVAA]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-          <div className="aspect-square relative md:block hidden">
+          <div className="aspect-square relative">
             <video
               autoPlay
               loop
@@ -225,7 +227,7 @@ export default async function ProjectPage({ params: { slug } }) {
     if (paragraph.trim() === '[UUSI_KUVA]') {
       return (
         <div key={index}>
-          <div className="aspect-square relative">
+          <div className="aspect-[3/4] relative">
             <Image
               src="/image1.jpg"
               alt="Interactive installation at RMXTA exhibition"
@@ -387,8 +389,8 @@ export default async function ProjectPage({ params: { slug } }) {
         <div key={index}>
           <div className="aspect-square relative">
             <Image
-              src="/workshop.jpg"
-              alt="Alusta.art platform workshop session"
+              src="/alustataso.jpg"
+              alt="Alusta brand assets"
               fill
               className="object-cover"
               priority
