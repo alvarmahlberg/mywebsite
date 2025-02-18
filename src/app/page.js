@@ -9,7 +9,7 @@ export default function Home() {
   const articles = [
     {
       title: "RMXTA Helsinki",
-      description: "A large-scale generative art exhibition developed from concept to completion",
+      description: "A large-scale generative art exhibition from concept to completion",
       mobileDescription: "A full-scale generative art exhibition from concept to completion",
       year: "2024",
       href: "/remix-the-archive"

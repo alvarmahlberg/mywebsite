@@ -13,18 +13,14 @@ Communications: Milla Paananen
 Production: Anna Puhakka
 Hardware: Elias Hakala`,
     content: `
-    [LAAJAKUVA]
+      [LAAJAKUVA]
 
-    Remix The Archive exhibition explores the intersection of tradition and technology through ten generative artworks. The exhibition invites visitors to engage directly with the algorithms using custom remix controllers.
+      [KAKSI_KUVAA]
 
-    [KAKSI_KUVAA]
+      [UUSI_KUVA]
 
-    Themes such as cultural memory, portraiture, landscapes, and artistic representation are examined, challenging the boundaries between digital and physical art. The exhibition sparks a dynamic conversation on how technology reshapes artistic heritage and collective creativity.
-
-    [UUSI_KUVA]
-
-    [PYSTYKUVAT]
-  `
+      [PYSTYKUVAT]
+    `
   },
   'alusta-space': {
     title: 'Alusta Space',
@@ -37,11 +33,7 @@ Electrical installation: Markku Huvilinna`,
     content: `
       [NEW_IMAGE]   
 
-      A former 1980s office building was transformed into a modern gallery space, with the renovation focusing on sustainable materials and the versatility of the space.
-
       [SECOND_IMAGE]
-
-      Sculptural curved walls bring a soft dynamism to the open, raw space. The shimmering, reflective stainless steel wall creates an immaterial-like boundary, completing the embrace-like enclosure formed by the curved walls through reflection.
 
       [THIRD_IMAGE]
     `
@@ -60,15 +52,9 @@ Posters: Erno Forsström`,
     content: `
       [NELIO_KUVA]
 
-      A new digital art competition with the goal of increasing global awareness of Finland's art collection while highlighting the beauty of algorithms and generative art. Participants from over 45+ countries.
-
-      [COMBINE_KUVA]
-
-      Participants used the public domain portion of Finland's digitized art collection—tens of thousands of images, objects, and metadata—as the foundation for their generative artworks.
+      [COMBINE_KUVA_3]
 
       [COMBINE_VIDEO_3]
-
-      Organized in collaboration with [Highlight.xyz](https://highlight.xyz), the competition generated over $30,000 in sales for the artists in addition to the prize money. Shortlisted works can be seen [here](https://highlight.xyz/curated/combine24).
 
       [KAKSI_VIDEOTA]
 
@@ -90,8 +76,6 @@ Creative Direction: Veera Almila, Juho Vesanen
 Partnerships: Marja Konttinen`,
     content: `
       [ALUSTA_INTRO_KUVA]
-
-      Alusta.art is a decentralized art platform that leverages blockchain technology to create new opportunities for digital artists and collectors. The platform combines traditional art market mechanisms with web3 infrastructure, enabling direct artist-to-collector relationships and transparent provenance tracking. 
     `
   },
   'metaspace': {
@@ -102,8 +86,6 @@ Partnerships: Marja Konttinen`,
     content: `
       [NEW_IMAGE] 
 
-      Metaspace is a WebGL-powered platform designed specifically for virtual art exhibitions. It provides an immersive environment where digital art can be experienced in ways not possible in traditional galleries.
-
       [METASPACE_KUVA]
     `
   }
@@ -111,13 +93,12 @@ Partnerships: Marja Konttinen`,
 
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({
-    slug: slug,
+    slug,
   }));
 }
 
-export default async function ProjectPage({ params }) {
-  await Promise.resolve();
-  const project = projects[params.slug];
+export default async function ProjectPage({ params: { slug } }) {
+  const project = projects[slug];
 
   if (!project) {
     return <div>Project not found</div>;
@@ -134,7 +115,7 @@ export default async function ProjectPage({ params }) {
         </ul>
       );
     }
-    if (paragraph.trim() === '[NEW_IMAGE]' && params.slug === 'metaspace') {
+    if (paragraph.trim() === '[NEW_IMAGE]' && slug === 'metaspace') {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative">
@@ -302,6 +283,39 @@ export default async function ProjectPage({ params }) {
         </div>
       );
     }
+    if (paragraph.trim() === '[COMBINE_KUVA_3]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[4/3] relative border border-gray-200">
+            <Image
+              src="/aikataulu.jpg"
+              alt="Combine24 timeline"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[COMBINE_VIDEO_3]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[4/3] relative border border-gray-200">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/blas.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      );
+    }
     if (paragraph.trim() === '[KAKSI_VIDEOTA]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
@@ -316,8 +330,8 @@ export default async function ProjectPage({ params }) {
           </div>
           <div className="aspect-square relative">
             <Image
-              src="/koli.jpg"
-              alt="Generative artwork inspired by Koli landscapes"
+              src="/tuomo.jpg"
+              alt="Generative artwork by Tuomo Rainio"
               fill
               className="object-cover"
               priority
@@ -409,39 +423,6 @@ export default async function ProjectPage({ params }) {
               className="object-cover"
               priority
             />
-          </div>
-        </div>
-      );
-    }
-    if (paragraph.trim() === '[COMBINE_KUVA]') {
-      return (
-        <div key={index}>
-          <div className="aspect-[2/1] relative border border-gray-200">
-            <Image
-              src="/collection.jpg"
-              alt="Combine24 Exhibition"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
-      );
-    }
-    if (paragraph.trim() === '[COMBINE_VIDEO_3]') {
-      return (
-        <div key={index}>
-          <div className="aspect-[4/3] relative border border-gray-200">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/blas.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
           </div>
         </div>
       );
