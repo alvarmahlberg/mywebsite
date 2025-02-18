@@ -552,7 +552,7 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[ALUSTA_VAAKA]') {
       return (
         <div key={index}>
-          <div className="aspect-[2/1] relative">
+          <div className="aspect-square relative">
             <MediaWrapper creator="">
               <video
                 autoPlay
