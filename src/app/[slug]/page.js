@@ -205,7 +205,7 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[LAAJAKUVA]') {
       return (
-        <div key={index}>
+        <div key={index} className="hidden md:block">
           <div className="aspect-[4/3] relative">
             <MediaWrapper creator="Remix the Archive Exhibition in Vallila, Helsinki">
               <Image
@@ -275,7 +275,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           <div className="aspect-[3/4] relative">
-            <MediaWrapper creator="The Artist Code by Shaderism">
+            <MediaWrapper creator="">
               <Image
                 src="/image1.jpg"
                 alt="Interactive installation at RMXTA exhibition"
@@ -286,7 +286,7 @@ export default async function ProjectPage({ params }) {
             </MediaWrapper>
           </div>
           <div className="aspect-[3/4] relative">
-            <MediaWrapper creator="Portrait Robot by Roni Kaufman">
+            <MediaWrapper creator="">
               <Image
                 src="/uusikuva1.jpg"
                 alt="RMXTA exhibition detail"
@@ -552,18 +552,15 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[ALUSTA_VAAKA]') {
       return (
         <div key={index}>
-          <div className="aspect-square relative">
+          <div className="aspect-[4/3] relative">
             <MediaWrapper creator="">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source src="/laajanaytto.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <Image
+                src="/platform.jpg"
+                alt="Alusta.art platform interface"
+                fill
+                className="object-cover"
+                priority
+              />
             </MediaWrapper>
           </div>
         </div>
