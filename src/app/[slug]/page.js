@@ -13,6 +13,16 @@ Communications: Milla Paananen
 Production: Anna Puhakka
 Hardware: Elias Hakala`,
     content: `
+      [MOBILE_1]
+
+      [MOBILE_2]
+
+      [MOBILE_3]
+
+      [MOBILE_4]
+
+      [MOBILE_5]
+
       [LAAJAKUVA]
 
       [UUSI_KUVA]
@@ -49,8 +59,8 @@ Producer: Anna Puhakka
 Systems Designer: Mitja Kaipiainen
 Communications: Milla Paananen, Oona Nakai
 Website: Rasmus Haikka 
-Visuals: Antoine Paikert
-Posters: Erno Forsström`,
+Visual Design: Antoine Paikert
+Poster Series: Erno Forsström`,
     content: `
       [NELIO_KUVA]
 
@@ -88,13 +98,11 @@ Partnerships: Marja Konttinen`,
     title: 'Metaspace',
     date: 'June 10, 2022',
     author: 'Alvar Mahlberg',
-    team: 'This was a startup adventure from my friends basement',
+    team: 'Startup adventure from my friends basement',
     content: `
       [NEW_IMAGE] 
 
       [METASPACE_KUVA]
-
-      [METASPACE_NELIO]
 
       [METASPACE_VAAKA]
     `,
@@ -118,8 +126,9 @@ const MediaWrapper = ({ children, creator, darkText }) => (
   </div>
 );
 
-export default async function ProjectPage({ params }) {
-  const project = projects[params.slug];
+export default async function ProjectPage({ params, searchParams }) {
+  const slug = params?.slug;
+  const project = projects[slug];
 
   if (!project) {
     return <div>Project not found</div>;
@@ -136,7 +145,7 @@ export default async function ProjectPage({ params }) {
         </ul>
       );
     }
-    if (paragraph.trim() === '[NEW_IMAGE]' && params.slug === 'metaspace') {
+    if (paragraph.trim() === '[NEW_IMAGE]' && slug === 'metaspace') {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative">
@@ -240,7 +249,7 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[KAKSI_KUVAA]') {
       return (
-        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+        <div key={index} className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div className="aspect-[3/4] relative md:block hidden">
             <MediaWrapper creator="">
               <video
@@ -274,7 +283,7 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[UUSI_KUVA]') {
       return (
-        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
+        <div key={index} className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           <div className="aspect-[3/4] relative md:block hidden">
             <MediaWrapper creator="">
               <Image
@@ -302,7 +311,7 @@ export default async function ProjectPage({ params }) {
     }
     if (paragraph.trim() === '[PYSTYKUVAT]') {
       return (
-        <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
+        <div key={index} className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
           <div className="aspect-[2/3] relative md:block hidden">
             <MediaWrapper creator="">
               <Image
@@ -520,23 +529,6 @@ export default async function ProjectPage({ params }) {
         </div>
       );
     }
-    if (paragraph.trim() === '[METASPACE_NELIO]') {
-      return (
-        <div key={index}>
-          <div className="aspect-[16/10] relative">
-            <MediaWrapper creator="">
-              <Image
-                src="/metaspace.jpg"
-                alt="Metaspace virtual gallery detail"
-                fill
-                className="object-cover"
-                priority
-              />
-            </MediaWrapper>
-          </div>
-        </div>
-      );
-    }
     if (paragraph.trim() === '[METASPACE_VAAKA]') {
       return (
         <div key={index}>
@@ -626,6 +618,91 @@ export default async function ProjectPage({ params }) {
               <Image
                 src="/frame2.jpg"
                 alt="Alusta.art platform interface"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[MOBILE_1]') {
+      return (
+        <div key={index} className="md:hidden">
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/mobile1.jpg"
+                alt="RMXTA mobile view 1"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[MOBILE_2]') {
+      return (
+        <div key={index} className="md:hidden">
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/mobile2.jpg"
+                alt="RMXTA mobile view 2"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[MOBILE_3]') {
+      return (
+        <div key={index} className="md:hidden">
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/mobile6.jpg"
+                alt="RMXTA mobile view 3"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[MOBILE_4]') {
+      return (
+        <div key={index} className="md:hidden">
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/mobile7.jpg"
+                alt="RMXTA mobile view 4"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[MOBILE_5]') {
+      return (
+        <div key={index} className="md:hidden">
+          <div className="aspect-[3/4] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/mobile5.jpg"
+                alt="RMXTA mobile view 5"
                 fill
                 className="object-cover"
                 priority

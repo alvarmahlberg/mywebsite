@@ -30,8 +30,8 @@ export default function Home() {
     },
     {
       title: "Alusta.art",
-      description: "A decentralized art platform built on the Zora protocol",
-      mobileDescription: "A decentralized art platform built on the Zora protocol",
+      description: "A decentralized art platform for artists and creators",
+      mobileDescription: "A decentralized art platform for artists and creators",
       year: "2023",
       href: "/alusta-art"
     },
@@ -136,7 +136,7 @@ export default function Home() {
               />
             </div>
             
-            <div className="text-[20px] space-y-6 text-gray-600">
+            <div className="text-[18px] md:text-[20px] space-y-6 text-gray-600">
               <p>
                 I lead ambitious projects and teams at the intersection of art, culture, and technology.
               </p>
