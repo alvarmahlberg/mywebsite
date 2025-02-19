@@ -127,8 +127,11 @@ const MediaWrapper = ({ children, creator, darkText }) => (
 );
 
 export default async function ProjectPage({ params, searchParams }) {
-  const slug = params?.slug;
-  const project = projects[slug];
+  if (!params) {
+    return <div>Loading...</div>;
+  }
+
+  const project = projects[params.slug];
 
   if (!project) {
     return <div>Project not found</div>;
@@ -145,7 +148,7 @@ export default async function ProjectPage({ params, searchParams }) {
         </ul>
       );
     }
-    if (paragraph.trim() === '[NEW_IMAGE]' && slug === 'metaspace') {
+    if (paragraph.trim() === '[NEW_IMAGE]' && params.slug === 'metaspace') {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative">
@@ -600,7 +603,7 @@ export default async function ProjectPage({ params, searchParams }) {
             <MediaWrapper creator="">
               <Image
                 src="/mobile.jpg"
-                alt="Alusta.art brand"
+                alt="Alusta.art mobile interface"
                 fill
                 className="object-cover"
                 priority
@@ -616,8 +619,8 @@ export default async function ProjectPage({ params, searchParams }) {
           <div className="aspect-[3/2] relative">
             <MediaWrapper creator="">
               <Image
-                src="/frame2.jpg"
-                alt="Alusta.art platform interface"
+                src="/alustateksti.jpg"
+                alt="Alusta brand logo"
                 fill
                 className="object-cover"
                 priority
