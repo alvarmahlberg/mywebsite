@@ -11,8 +11,7 @@ Systems Design: Mitja Kaipiainen
 Creative Direction: Erno Forsström
 Communications: Milla Paananen
 Production: Anna Puhakka
-Hardware: Elias Hakala
-Photos: Juho Huttunen`,
+Hardware: Elias Hakala`,
     content: `
       [LAAJAKUVA]
 
@@ -23,7 +22,7 @@ Photos: Juho Huttunen`,
       [VAALEA_KUVA]
 
       [KAKSI_KUVAA]
-    `
+    `,
   },
   'alusta-space': {
     title: 'Alusta Space',
@@ -32,15 +31,14 @@ Photos: Juho Huttunen`,
     team: `**Team**
 Space Design: Tuuli Kanerva, Leo Lindroos, Antti Soini
 Construction: Niko Rissanen
-Electrical installation: Markku Huvilinna
-Photos: Kalle Kouhia`,
+Electrical installation: Markku Huvilinna`,
     content: `
       [NEW_IMAGE]   
 
       [SECOND_IMAGE]
 
       [THIRD_IMAGE]
-    `
+    `,
   },
   'combine24': {
     title: 'Combine24',
@@ -49,9 +47,9 @@ Photos: Kalle Kouhia`,
     team: `**Team**
 Producer: Anna Puhakka
 Systems Designer: Mitja Kaipiainen
-Production: Milla Paananen
+Communications: Milla Paananen, Oona Nakai
 Website: Rasmus Haikka 
-Visual identity: Antoine Paikert
+Visuals: Antoine Paikert
 Posters: Erno Forsström`,
     content: `
       [NELIO_KUVA]
@@ -63,7 +61,7 @@ Posters: Erno Forsström`,
       [KAKSI_VIDEOTA]
 
       [KAKSI_VIDEOTA_2]
-    `
+    `,
   },
   'alusta-art': {
     title: 'Alusta.art',
@@ -76,7 +74,7 @@ Software Development: Artur Veselovski, Manu Matila
 UI Designer: Erno Forsström
 Brand Identity: Antoine Paikert, Joni Stanley
 Creative Direction: Veera Almila, Juho Vesanen
-FNG: Mitja Kaipiainen, Anna Puhakka
+FNG Team: Mitja Kaipiainen, Anna Puhakka
 Partnerships: Marja Konttinen`,
     content: `
       [ALUSTA_VAAKA]
@@ -84,18 +82,22 @@ Partnerships: Marja Konttinen`,
       [ALUSTA_NELIO_VIDEO]
 
       [ALUSTA_VIDEO]
-    `
+    `,
   },
   'metaspace': {
     title: 'Metaspace',
     date: 'June 10, 2022',
     author: 'Alvar Mahlberg',
-    team: '',
+    team: 'This was a startup adventure from my friends basement',
     content: `
       [NEW_IMAGE] 
 
       [METASPACE_KUVA]
-    `
+
+      [METASPACE_NELIO]
+
+      [METASPACE_VAAKA]
+    `,
   }
 };
 
@@ -117,8 +119,7 @@ const MediaWrapper = ({ children, creator, darkText }) => (
 );
 
 export default async function ProjectPage({ params }) {
-  const { slug } = params;
-  const project = projects[slug];
+  const project = projects[params.slug];
 
   if (!project) {
     return <div>Project not found</div>;
@@ -135,7 +136,7 @@ export default async function ProjectPage({ params }) {
         </ul>
       );
     }
-    if (paragraph.trim() === '[NEW_IMAGE]' && slug === 'metaspace') {
+    if (paragraph.trim() === '[NEW_IMAGE]' && params.slug === 'metaspace') {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative">
@@ -241,7 +242,7 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div className="aspect-[3/4] relative md:block hidden">
-            <MediaWrapper creator="Poster video by Milla Paananen">
+            <MediaWrapper creator="">
               <video
                 autoPlay
                 loop
@@ -255,7 +256,7 @@ export default async function ProjectPage({ params }) {
             </MediaWrapper>
           </div>
           <div className="aspect-[3/4] relative">
-            <MediaWrapper creator="Exhibition video by Milla Paananen">
+            <MediaWrapper creator="">
               <video
                 autoPlay
                 loop
@@ -274,7 +275,7 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[UUSI_KUVA]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
-          <div className="aspect-[3/4] relative">
+          <div className="aspect-[3/4] relative md:block hidden">
             <MediaWrapper creator="">
               <Image
                 src="/image1.jpg"
@@ -302,8 +303,8 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[PYSTYKUVAT]') {
       return (
         <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4">
-          <div className="aspect-[2/3] relative">
-            <MediaWrapper creator="Remix the Archive T-shirt by VAIN">
+          <div className="aspect-[2/3] relative md:block hidden">
+            <MediaWrapper creator="">
               <Image
                 src="/image6.jpg"
                 alt="RMXTA exhibition controller detail"
@@ -314,7 +315,7 @@ export default async function ProjectPage({ params }) {
             </MediaWrapper>
           </div>
           <div className="aspect-[2/3] relative">
-            <MediaWrapper creator="Remix the Archive controller by Elias Hakala">
+            <MediaWrapper creator="">
               <Image
                 src="/taso.jpg"
                 alt="RMXTA exhibition display setup"
@@ -354,10 +355,10 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[COMBINE_KUVA_3]') {
       return (
         <div key={index}>
-          <div className="aspect-[4/3] relative border border-gray-200">
+          <div className="aspect-[5/3] relative border border-gray-200">
             <MediaWrapper creator="" darkText>
               <Image
-                src="/aikataulu.jpg"
+                src="/combineaikataulu.jpg"
                 alt="Combine24 timeline"
                 fill
                 className="object-cover"
@@ -510,6 +511,40 @@ export default async function ProjectPage({ params }) {
               <Image
                 src="/metaspace1.jpg"
                 alt="Metaspace virtual gallery environment"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[METASPACE_NELIO]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[16/10] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/metaspace.jpg"
+                alt="Metaspace virtual gallery detail"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[METASPACE_VAAKA]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[16/10] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/metaspace3.jpg"
+                alt="Metaspace virtual gallery overview"
                 fill
                 className="object-cover"
                 priority
