@@ -79,9 +79,9 @@ Partnerships: Marja Konttinen`,
     content: `
       [ALUSTA_VAAKA]
 
-      [ALUSTA_NELIO_VIDEO]
-
       [ALUSTA_VIDEO]
+
+      [ALUSTA_NELIO_VIDEO]
     `,
   },
   'metaspace': {
@@ -605,17 +605,14 @@ export default async function ProjectPage({ params }) {
       return (
         <div key={index}>
           <div className="aspect-square relative">
-            <MediaWrapper creator="Alusta brand video by Antoine Paikert">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source src="/alusta-brand.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <MediaWrapper creator="">
+              <Image
+                src="/mobile.jpg"
+                alt="Alusta.art brand"
+                fill
+                className="object-cover"
+                priority
+              />
             </MediaWrapper>
           </div>
         </div>
@@ -624,18 +621,15 @@ export default async function ProjectPage({ params }) {
     if (paragraph.trim() === '[ALUSTA_NELIO_VIDEO]') {
       return (
         <div key={index}>
-          <div className="aspect-square relative">
-            <MediaWrapper creator="Alusta.art release video by Erno Forsström">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source src="/alusta-flick.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+          <div className="aspect-[3/2] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/frame2.jpg"
+                alt="Alusta.art platform interface"
+                fill
+                className="object-cover"
+                priority
+              />
             </MediaWrapper>
           </div>
         </div>
