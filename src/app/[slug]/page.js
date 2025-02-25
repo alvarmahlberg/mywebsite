@@ -11,7 +11,8 @@ Systems Design: Mitja Kaipiainen
 Creative Direction: Erno Forsström
 Communications: Milla Paananen
 Production: Anna Puhakka
-Hardware: Elias Hakala`,
+Hardware: Elias Hakala
+Photos: Juho Huttunen`,
     content: `
       [MOBILE_1]
 
@@ -41,7 +42,8 @@ Hardware: Elias Hakala`,
     team: `**Team**
 Space Design: Tuuli Kanerva, Leo Lindroos, Antti Soini
 Construction: Niko Rissanen
-Electrical installation: Markku Huvilinna`,
+Electrical installation: Markku Huvilinna
+Photos: Kalle Kouhia`,
     content: `
       [NEW_IMAGE]   
 
@@ -57,16 +59,18 @@ Electrical installation: Markku Huvilinna`,
     team: `**Team**
 Producer: Anna Puhakka
 Systems Designer: Mitja Kaipiainen
-Communications: Milla Paananen, Oona Nakai
+Production: Milla Paananen
 Website: Rasmus Haikka 
-Visual Design: Antoine Paikert
+Visual identity: Antoine Paikert
 Poster Series: Erno Forsström`,
     content: `
-      [NELIO_KUVA]
-
       [COMBINE_KUVA_3]
 
+      [COMBINE_NELIO]
+
       [COMBINE_VIDEO_3]
+
+      [NELIO_KUVA]
 
       [KAKSI_VIDEOTA]
 
@@ -82,6 +86,7 @@ Lead Developer: Kasper Tontti
 System Architect: Kai-Markus Lehtimäki
 Software Development: Artur Veselovski, Manu Matila
 UI Designer: Erno Forsström
+
 Brand Identity: Antoine Paikert, Joni Stanley
 Creative Direction: Veera Almila, Juho Vesanen
 FNG Team: Mitja Kaipiainen, Anna Puhakka
@@ -254,7 +259,7 @@ export default async function ProjectPage({ params, searchParams }) {
       return (
         <div key={index} className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div className="aspect-[3/4] relative md:block hidden">
-            <MediaWrapper creator="">
+            <MediaWrapper creator="Exhibition Video by Milla Paananen">
               <video
                 autoPlay
                 loop
@@ -268,7 +273,7 @@ export default async function ProjectPage({ params, searchParams }) {
             </MediaWrapper>
           </div>
           <div className="aspect-[3/4] relative">
-            <MediaWrapper creator="">
+            <MediaWrapper creator="Exhibition Video by Milla Paananen">
               <video
                 autoPlay
                 loop
@@ -345,23 +350,6 @@ export default async function ProjectPage({ params, searchParams }) {
         <p key={index} className="text-[12px] md:text-[14px] text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis">
           {paragraph.trim()}Elia
         </p>
-      );
-    }
-    if (paragraph.trim() === '[NELIO_KUVA]') {
-      return (
-        <div key={index}>
-          <div className="aspect-square relative">
-            <MediaWrapper creator="">
-              <Image
-                src="/CombineNelio.jpg"
-                alt="Combine24 competition artwork"
-                fill
-                className="object-cover"
-                priority
-              />
-            </MediaWrapper>
-          </div>
-        </div>
       );
     }
     if (paragraph.trim() === '[COMBINE_KUVA_3]') {
@@ -715,6 +703,40 @@ export default async function ProjectPage({ params, searchParams }) {
         </div>
       );
     }
+    if (paragraph.trim() === '[COMBINE_NELIO]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[3/2] relative border border-gray-200">
+            <MediaWrapper creator="" darkText>
+              <Image
+                src="/combinesaannot.jpg"
+                alt="Combine24 artwork"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[NELIO_KUVA]') {
+      return (
+        <div key={index}>
+          <div className="aspect-square relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/CombineNelio.jpg"
+                alt="Combine24 competition artwork"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
     return <p key={index}>{paragraph.trim()}</p>;
   };
 
@@ -735,7 +757,7 @@ export default async function ProjectPage({ params, searchParams }) {
 
         <div className="border-t border-gray-200 pt-8 mt-16">
           <pre className="text-[10px] md:text-[14px] text-gray-900 mb-8 font-sans whitespace-pre-wrap">
-            <span className="font-bold">Project Team</span>
+            <span className="font-bold">Team</span>
             {'\n'}
             {project.team.replace('**Team**\n', '')}
           </pre>
