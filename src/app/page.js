@@ -8,10 +8,19 @@ export default function Home() {
 
   const articles = [
     {
+      title: 'RMXTA New York',
+      description: 'A large-scale generative art exhibition at Dunkunsthalle',
+      mobileDescription: 'A generative art exhibition at Dunkunsthalle',
+      year: '2025',
+      date: 'March 15, 2024',
+      href: '/rmxta-newyork'
+    },
+    {
       title: "RMXTA Helsinki",
       description: "A large-scale generative art exhibition from concept to completion",
       mobileDescription: "A generative art exhibition from concept to completion",
       year: "2024",
+      date: "December 13, 2023",
       href: "/remix-the-archive"
     },
     {
