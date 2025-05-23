@@ -77,7 +77,7 @@ Thank you: Kati Laakso, Anssi Vallius, Johanna Eiramo, Emma Termonen`,
     if (paragraph.trim() === '[KUVA_4]') {
       return (
         <div key={index}>
-          <div className="aspect-[3/4] relative">
+          <div className="aspect-[4/5] relative">
             <Image
               src="/rmxta-newyork-4.jpg"
               alt="RMXTA New York exhibition detail"
@@ -92,7 +92,7 @@ Thank you: Kati Laakso, Anssi Vallius, Johanna Eiramo, Emma Termonen`,
 
     if (paragraph.trim() === '[KUVA_5]') {
       return (
-        <div key={index}>
+        <div key={index} className="hidden">
           <div className="aspect-[3/4] relative">
             <Image
               src="/rmxta-newyork-5.jpg"
