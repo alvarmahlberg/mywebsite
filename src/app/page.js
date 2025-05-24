@@ -21,7 +21,18 @@ export default function Home() {
       mobileDescription: "Generative art exhibition from concept to completion",
       year: "2024",
       date: "December 13, 2023",
-      href: "/remix-the-archive"
+      content: `
+        [KUVA_1]
+
+        [KUVA_2]
+
+        [KUVA_3]
+
+        [KUVA_4]
+
+        [KUVA_5]
+      `,
+      href: "/rmxta-helsinki"
     },
     {
       title: "Alusta Space",
