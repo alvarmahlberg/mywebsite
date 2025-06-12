@@ -10,7 +10,8 @@ const projects = {
 Systems Design: Mitja Kaipiainen
 Space Design: Leo Lindroos, Tuuli Kanerva, Antti Soini
 Podium Design: Hanna Anonen
-Communications: Milla Paananen, Emma Termonen
+Communications: Milla Paananen, Emma Termonen, Rowena Hurme
+Photos: Janne Tuunanen
 Thank you: Kati Laakso, Anssi Vallius, Johanna Eiramo`,
     content: `
       [KUVA_1]
@@ -22,6 +23,8 @@ Thank you: Kati Laakso, Anssi Vallius, Johanna Eiramo`,
       [KUVA_4]
 
       [KUVA_5]
+
+      [KUVA_6]
     `
   },
   'rmxta-helsinki': {
@@ -154,7 +157,8 @@ const MediaWrapper = ({ children, creator, darkText }) => (
 );
 
 export default async function ProjectPage({ params, searchParams }) {
-  const project = projects[params.slug];
+  const slug = await Promise.resolve(params.slug);
+  const project = projects[slug];
 
   if (!project) {
     notFound();
@@ -171,7 +175,7 @@ export default async function ProjectPage({ params, searchParams }) {
         </ul>
       );
     }
-    if (paragraph.trim() === '[NEW_IMAGE]' && params.slug === 'metaspace') {
+    if (paragraph.trim() === '[NEW_IMAGE]' && slug === 'metaspace') {
       return (
         <div key={index}>
           <div className="aspect-[4/3] relative">
@@ -758,7 +762,7 @@ export default async function ProjectPage({ params, searchParams }) {
     if (paragraph.trim() === '[KUVA_1]') {
       return (
         <div key={index}>
-          <div className="aspect-[4/3] relative">
+          <div className="aspect-[3/2] relative">
             <MediaWrapper creator="">
               <Image
                 src="/rmxta-newyork-1.jpg"
@@ -775,7 +779,7 @@ export default async function ProjectPage({ params, searchParams }) {
     if (paragraph.trim() === '[KUVA_2]') {
       return (
         <div key={index}>
-          <div className="aspect-[4/3] relative">
+          <div className="aspect-[2/3] relative">
             <MediaWrapper creator="">
               <Image
                 src="/rmxta-newyork-2.jpg"
@@ -791,8 +795,8 @@ export default async function ProjectPage({ params, searchParams }) {
     }
     if (paragraph.trim() === '[KUVA_3]') {
       return (
-        <div key={index} className="hidden">
-          <div className="aspect-[3/4] relative">
+        <div key={index}>
+          <div className="aspect-[3/2] relative">
             <MediaWrapper creator="">
               <Image
                 src="/rmxta-newyork-3.jpg"
@@ -809,7 +813,7 @@ export default async function ProjectPage({ params, searchParams }) {
     if (paragraph.trim() === '[KUVA_4]') {
       return (
         <div key={index}>
-          <div className="aspect-[4/5] relative">
+          <div className="aspect-[2/3] relative">
             <MediaWrapper creator="">
               <Image
                 src="/rmxta-newyork-4.jpg"
@@ -825,11 +829,28 @@ export default async function ProjectPage({ params, searchParams }) {
     }
     if (paragraph.trim() === '[KUVA_5]') {
       return (
-        <div key={index} className="hidden">
-          <div className="aspect-[3/4] relative">
+        <div key={index}>
+          <div className="aspect-[2/3] relative">
             <MediaWrapper creator="">
               <Image
                 src="/rmxta-newyork-5.jpg"
+                alt="RMXTA New York exhibition detail"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[KUVA_6]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[3/2] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/rmxta-newyork-6.jpg"
                 alt="RMXTA New York exhibition detail"
                 fill
                 className="object-cover"
