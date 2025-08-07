@@ -6,60 +6,47 @@ import Image from 'next/image';
 export default function Home() {
   const [activeView, setActiveView] = useState("projects");
 
-  const articles = [
+  const projects = [
     {
-      title: 'RMXTA New York',
-      description: 'A large-scale generative art exhibition at Dunkunsthalle',
-      mobileDescription: 'Generative art exhibition at Dunkunsthalle 9 May - 21 June',
+      title: 'Remix the Archive New York',
+      description: 'Generative art exhibition',
       year: '2025',
-      date: 'March 15, 2024',
+      image: '/rmxta-newyork-1.jpg',
       href: '/rmxta-newyork'
     },
     {
-      title: "RMXTA Helsinki",
-      description: "A large-scale generative art exhibition from concept to completion",
-      mobileDescription: "Generative art exhibition from concept to completion",
+      title: "Remix the Archive Helsinki",
+      description: "Generative art exhibition",
       year: "2024",
-      date: "December 13, 2023",
-      content: `
-        [KUVA_1]
-
-        [KUVA_2]
-
-        [KUVA_3]
-
-        [KUVA_4]
-
-        [KUVA_5]
-      `,
+      image: '/juho-nelio.jpeg',
       href: "/rmxta-helsinki"
     },
     {
       title: "Alusta Space",
-      description: "An old office building transformed into a modern and versatile gallery space",
-      mobileDescription: "Old office building converted into a modern gallery space",
+      description: "Modern exhibition venue",
       year: "2024",
+      image: '/alusta-space3.jpg',
       href: "/alusta-space"
     },
     {
       title: "Combine24",
-      description: "A pioneering digital art competition elevating Finland's national art collection",
-      mobileDescription: "Digital art competition based on national art collection",
+      description: "Global art competition",
       year: "2024",
+      image: '/1_1.png',
       href: "/combine24"
     },
     {
       title: "Alusta.art",
-      description: "A decentralized art platform for artists and creators",
-      mobileDescription: "Decentralized art platform for artists and creators",
+      description: "Digital art platform",
       year: "2023",
+      image: '/logoalusta.png',
       href: "/alusta-art"
     },
     {
       title: "Metaspace",
-      description: "A WebGL-powered platform for virtual art exhibitions",
-      mobileDescription: "WebGL-powered platform for virtual art exhibitions",
+      description: "Digital art gallery",
       year: "2022",
+      image: '/meta1.jpg',
       href: "/metaspace"
     }
   ]
@@ -86,64 +73,30 @@ export default function Home() {
         </header>
 
         {activeView === "projects" ? (
-          <>
-            <div className="space-y-6">
-              {articles.map((article) => (
-                <article key={article.title} className="flex items-baseline">
-                  <Link href={article.href} className="group w-full">
-                    <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-0">
-                      <div className="flex items-baseline gap-2">
-                        <h2 className="text-[20px] font-bold hover:underline underline-offset-4 text-black">
-                          {article.title}
-                        </h2>
-                        <span className="md:hidden text-[13px] text-gray-400">
-                          {article.year}
-                        </span>
-                      </div>
-                      <span className="text-[11px] whitespace-nowrap overflow-hidden text-ellipsis md:text-[15px] md:whitespace-normal text-gray-500 md:mx-2">
-                        <span className="hidden md:inline">— </span>
-                        <span className="md:hidden">{article.mobileDescription}</span>
-                        <span className="hidden md:inline">{article.description}</span>
-                      </span>
-                      <span className="hidden md:inline text-[15px] text-gray-400">
-                        {article.year}
-                      </span>
-                    </div>
-                  </Link>
-                </article>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mt-20 pb-16">
-              <div className="aspect-square relative">
-                <Image
-                  src="/image1.jpg"
-                  alt="Artwork 1"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="aspect-square relative">
-                <Image
-                  src="/alustanelio.jpg"
-                  alt="Artwork 2"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="aspect-square relative">
-                <Image
-                  src="/image3.jpg"
-                  alt="Artwork 3"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {projects.map((project) => (
+              <Link key={project.title} href={project.href} className="group">
+                <div className="aspect-square relative mb-4 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    priority
+                  />
+                </div>
+                <h2 className="text-[18px] font-bold text-black mb-2 group-hover:underline">
+                  {project.title}
+                </h2>
+                <p className="text-[14px] text-gray-600 mb-1">
+                  {project.description}
+                </p>
+                <span className="text-[12px] text-gray-400">
+                  {project.year}
+                </span>
+              </Link>
+            ))}
+          </div>
         ) : (
           <div className="flex flex-col md:flex-row gap-8 md:gap-16">
             <div className="w-full md:w-[300px] aspect-[3/4] relative flex-shrink-0">

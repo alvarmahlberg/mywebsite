@@ -3,7 +3,8 @@ export default function sitemap() {
 
   // Projektien slugit
   const projects = [
-    'remix-the-archive',
+    'rmxta-newyork',
+    'rmxta-helsinki',
     'alusta-space',
     'combine24',
     'alusta-art',

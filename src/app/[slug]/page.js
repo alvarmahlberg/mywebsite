@@ -4,15 +4,17 @@ import Image from 'next/image';
 const projects = {
   'rmxta-newyork': {
     title: 'RMXTA New York',
-    date: 'March 15, 2024',
+    date: 'June 15, 2025',
     author: 'Alvar Mahlberg',
+    description: `A former Dunkin' Donuts in Manhattan's Financial District transformed into a stage for the generative art exhibition. Executed from concept to completion.`,
     team: `**Team**
 Systems Design: Mitja Kaipiainen
 Space Design: Leo Lindroos, Tuuli Kanerva, Antti Soini
+Visual Design: Milla Paananen
 Podium Design: Hanna Anonen
-Communications: Milla Paananen, Emma Termonen, Rowena Hurme
+Communications: Emma Termonen, Rowena Hurme
 Photos: Janne Tuunanen
-Thank you: Kati Laakso, Anssi Vallius, Johanna Eiramo`,
+Together with: Kati Laakso, Anssi Vallius, Johanna Eiramo`,
     content: `
       [KUVA_1]
 
@@ -20,17 +22,26 @@ Thank you: Kati Laakso, Anssi Vallius, Johanna Eiramo`,
 
       [KUVA_3]
 
+      
+
       [KUVA_4]
 
       [KUVA_5]
 
       [KUVA_6]
+
+      This project was a collaboration between the Finnish National Gallery, the Finnish Cultural Institute, and Consulate General of Finland in New York.
+
+      [Shadowplay Magazine Article](https://www.shadowplaymagazine.com/review/ov571e8xp7lxbyos01roy3l7o5gou9/)
+      [Remix the Archive Website](https://remixthearchive.com/)
+      [Museum of Tomorrow Documentary](https://www.museumoftomorrow.fi)
     `
   },
   'rmxta-helsinki': {
     title: 'RMXTA Helsinki',
     date: 'December 13, 2024',
     author: 'Alvar Mahlberg',
+    description: 'Moving beyond the museum’s walls to present new forms of art and engage new audiences. Full-scale generative art exhibition from concept to completion.',
     team: `**Team**
 Systems Design: Mitja Kaipiainen
 CD & Visual Identity: Erno Forsström
@@ -58,12 +69,16 @@ Photos: Juho Huttunen`,
       [VAALEA_KUVA]
 
       [KAKSI_KUVAA]
+
+      [Fakewhale Article](https://log.fakewhale.xyz/remix-the-archive-at-alusta-space-helsinki/)
+      [STT Info](https://www.sttinfo.fi/tiedote/70520187/remix-the-archive-gives-artworks-from-the-finnish-national-gallerys-collection-a-new-form-through-generative-art?publisherId=17525083&lang=en)
     `,
   },
   'alusta-space': {
     title: 'Alusta Space',
     date: 'September 15, 2024',
     author: 'Alvar Mahlberg',
+    description: 'Conversion of an old office building into a modern exhibition venue. Strong focus on recyclable materials and the multi-purpose nature of the space.',
     team: `**Team**
 Space Design: Tuuli Kanerva, Leo Lindroos, Antti Soini
 Construction: Niko Rissanen
@@ -81,6 +96,7 @@ Photos: Kalle Kouhia`,
     title: 'Combine24',
     date: 'September 1, 2024',
     author: 'Alvar Mahlberg',
+    description: 'A global digital art competition to elevate Finland’s national art collection through creative coding.',
     team: `**Team**
 Producer: Anna Puhakka
 Systems Designer: Mitja Kaipiainen
@@ -100,12 +116,16 @@ Poster Series: Erno Forsström`,
       [KAKSI_VIDEOTA]
 
       [KAKSI_VIDEOTA_2]
+
+      [Combine24 Website](https://combine24.alusta.art)
+      [Finnish National Gallery](https://www.kansallisgalleria.fi/en)
     `,
   },
   'alusta-art': {
     title: 'Alusta.art',
     date: 'December 15, 2023',
     author: 'Alvar Mahlberg',
+    description: 'Blockchain-based platform that enables the publishing, sharing, and collecting of digital content — including images, videos, music, 3d objects, and texts.',
     team: `**Team**
 Lead Developer: Kasper Tontti
 System Architect: Kai-Markus Lehtimäki
@@ -122,12 +142,15 @@ Partnerships: Marja Konttinen`,
       [ALUSTA_VIDEO]
 
       [ALUSTA_NELIO_VIDEO]
+
+      [Alusta.art](https://alusta.art/)
     `,
   },
   'metaspace': {
     title: 'Metaspace',
     date: 'June 10, 2022',
     author: 'Alvar Mahlberg',
+    description: 'Web3 native platform for WebGL-based virtual galleries where users could create their own art exhibitions.',
     team: 'Startup adventure from my friends basement',
     content: `
       [NEW_IMAGE] 
@@ -572,12 +595,12 @@ export default async function ProjectPage({ params, searchParams }) {
     if (paragraph.includes('[') && paragraph.includes('](')) {
       const parts = paragraph.split(/\[|\]|\(|\)/);
       return (
-        <p key={index}>
+        <div key={index} className="space-y-1">
           {parts.reduce((acc, part, i) => {
             if (i % 4 === 1) {
               const linkUrl = parts[i + 2];
               return [...acc, 
-                <Link key={i} href={linkUrl} className="underline hover:text-black" target="_blank">
+                <Link key={i} href={linkUrl} className="underline hover:text-black block" target="_blank">
                   {part}
                 </Link>
               ];
@@ -586,7 +609,7 @@ export default async function ProjectPage({ params, searchParams }) {
             }
             return acc;
           }, [])}
-        </p>
+        </div>
       );
     }
     if (paragraph.trim() === '[ALUSTA_VAAKA]') {
@@ -765,7 +788,7 @@ export default async function ProjectPage({ params, searchParams }) {
           <div className="aspect-[3/2] relative">
             <MediaWrapper creator="">
               <Image
-                src="/rmxta-newyork-1.jpg"
+                src="/dunkku.jpeg"
                 alt="RMXTA New York exhibition view"
                 fill
                 className="object-cover"
@@ -871,9 +894,13 @@ export default async function ProjectPage({ params, searchParams }) {
           {project.date} by <Link href="/" className="underline hover:text-black">{project.author}</Link>
         </div>
 
-        <h1 className="text-[28px] md:text-[48px] font-bold text-black mb-10">
+        <h1 className="text-[28px] md:text-[48px] font-bold text-black mb-6">
           {project.title}
         </h1>
+
+        <p className="text-[16px] md:text-[18px] text-gray-700 leading-relaxed mb-10">
+          {project.description}
+        </p>
 
         <div className="text-gray-600 space-y-10 text-[16px] md:text-[18px] leading-relaxed">
           {project.content.split('\n\n').map((paragraph, index) => renderContent(paragraph, index))}

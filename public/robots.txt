@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap sijainti
+Sitemap: https://alvar.energy/sitemap.xml
+
+# Ohita Next.js teknisiä tiedostoja
+Disallow: /_next/
+Disallow: /api/
+
+# Ohita media-tiedostot indeksoinnista (valinnainen)
+Disallow: /public/
+
+# Ohita mahdolliset admin-tiedostot
+Disallow: /admin/
+
+# Ohita teknisiä tiedostoja
+Disallow: /favicon.ico
+Disallow: /robots.txt
+Disallow: /sitemap.xml 
