@@ -4,12 +4,19 @@ Allow: /
 # Sitemap sijainti
 Sitemap: https://alvar.energy/sitemap.xml
 
+# Sallitaan kuvien indeksointi Google Images -hakua varten
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+
 # Ohita Next.js teknisiä tiedostoja
 Disallow: /_next/
 Disallow: /api/
 
-# Ohita media-tiedostot indeksoinnista (valinnainen)
-Disallow: /public/
+# Sallitaan kuvien indeksointi
+# Disallow: /public/ - poistettu, jotta kuvat indeksoituvat
 
 # Ohita mahdolliset admin-tiedostot
 Disallow: /admin/
