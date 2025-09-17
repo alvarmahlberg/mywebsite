@@ -6,7 +6,7 @@ const projects = {
     title: 'RMXTA New York',
     date: 'June 15, 2025',
     author: 'Alvar Mahlberg',
-    description: `A former Dunkin' Donuts in Manhattan's Financial District transformed into a stage for the generative art exhibition. Executed from concept to completion.`,
+    description: `A former Dunkin' Donuts in Financial District transformed into a stage for the generative art exhibition. Executed from concept to completion.`,
     team: `**Team**
 Systems Design: Mitja Kaipiainen
 Space Design: Leo Lindroos, Tuuli Kanerva, Antti Soini

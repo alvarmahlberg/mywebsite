@@ -120,7 +120,7 @@ export default function Home() {
                 I grew up in Helsinki and studied Information Systems Science at the University of Jyväskylä.
               </p>
               <p>
-                You can reach me at <a href="mailto:alvar.mahlberg@fng.fi" className="underline">alvar.mahlberg@fng.fi</a>
+                You can reach me at <a href="mailto:alvarmahlberg@gmail.com" className="underline">alvarmahlberg@gmail.com</a>
               </p>
             </div>
           </div>
