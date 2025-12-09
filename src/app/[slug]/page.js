@@ -241,6 +241,8 @@ Together with: Mitja Kaipiainen, Kati Laakso, Anssi Vallius`,
   }
 };
 
+export const dynamic = 'force-static';
+
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({
     slug,
@@ -259,7 +261,7 @@ const MediaWrapper = ({ children, creator, darkText }) => (
 );
 
 export default async function ProjectPage({ params, searchParams }) {
-  const slug = await Promise.resolve(params.slug);
+  const { slug } = await params;
   const project = projects[slug];
 
   if (!project) {
