@@ -1,48 +1,72 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 const projects = {
   'rmxta-newyork': {
-    title: 'RMXTA New York',
+    title: 'Remix the Archive NYC',
     date: 'June 15, 2025',
     author: 'Alvar Mahlberg',
-    description: `A former Dunkin' Donuts in Financial District transformed into a stage for the generative art exhibition. Executed from concept to completion.`,
-    team: `**Team**
+    description: `
+    `,
+    team: `**Credits**
+Project Manager: Alvar Mahlberg
 Systems Design: Mitja Kaipiainen
 Space Design: Leo Lindroos, Tuuli Kanerva, Antti Soini
 Visual Design: Milla Paananen
 Podium Design: Hanna Anonen
 Communications: Emma Termonen, Rowena Hurme
-Photos: Janne Tuunanen
-Together with: Kati Laakso, Anssi Vallius, Johanna Eiramo`,
+Exhibition Texts: Sofia Garcia
+Consulate General of Finland, NY: Anssi Vallius
+FCINY: Kati Laakso
+Finnish National Gallery: Johanna Eiramo
+Dunkunsthalle: Rachel Rossin, Rebecca Picanso
+Photos: Janne Tuunanen`,
     content: `
-      [KUVA_1]
 
-      [KUVA_2]
+  [KUVA_1]
 
-      [KUVA_3]
+    I led the international generative art exhibition project and coordinated the working team in collaboration with several cultural institutions. It was a fast-paced collaboration across organisations, and highly rewarding to see the final outcome and how audiences engaged with the generative artworks. 
 
-      
+[KUVA_3]
+
+*Remix the Archive* was a dialogue between past, present and the future, where history was not just preserved but reimagined. Each artist in this exhibition used generative art techniques to create new, algorithmic art that were archived again in the latest mediums. Visitors were encouraged to engage with the artworks, interact with the systems and, ultimately, remix the archive.
+
+[KUVA_6]
+
+Participating Artists & Works
+Newyellow – A Dance with History
+Nahuel Gerth – BodyArtLab
+Andreas Rau – Inventory Numbers
+Ilmo Kapanen & Aarni Kapanen – Loom Of Reality
+Blas.v – Perseverance
+Roni Kaufman – Portrait Robot
+Agoston Nagy – re-frame
+Jeremy Schoenherr (Jeres) – Repetition and Noise
+Arttu Koskela (Shaderism) – The Artist Code
+Tuomo Rainio – Wunderblock
+
+
+*9 May – 21 June Dunkunsthalle, 64 Fulton St, 10038 NYC.*
+
 
       [KUVA_4]
 
-      [KUVA_5]
 
-      [KUVA_6]
 
-      This project was a collaboration between the Finnish National Gallery, the Finnish Cultural Institute, and Consulate General of Finland in New York.
+      The exhibition was realized in collaboration with the Finnish National Gallery, the Finnish Cultural Institute, and the Consulate General of Finland in New York.
 
       [Shadowplay Magazine Article](https://www.shadowplaymagazine.com/review/ov571e8xp7lxbyos01roy3l7o5gou9/)
       [Remix the Archive Website](https://remixthearchive.com/)
-      [Museum of Tomorrow Documentary](https://www.museumoftomorrow.fi)
     `
   },
   'rmxta-helsinki': {
     title: 'RMXTA Helsinki',
     date: 'December 13, 2024',
     author: 'Alvar Mahlberg',
-    description: 'Moving beyond the museum’s walls to present new forms of art and engage new audiences. Full-scale generative art exhibition from concept to completion.',
-    team: `**Team**
+    description: '',
+    team: `**Credits**
+Project Manager: Alvar Mahlberg
 Systems Design: Mitja Kaipiainen
 CD & Visual Identity: Erno Forsström
 Communications: Milla Paananen
@@ -50,6 +74,9 @@ Production: Anna Puhakka
 Controllers: Elias Hakala
 Photos: Juho Huttunen`,
     content: `
+    I led the generative art exhibition project and coordinated the working team. It was a pleasure to work with a small and dedicated team to present new forms of art and engage new audiences.
+
+
       [MOBILE_1]
 
       [MOBILE_2]
@@ -70,6 +97,8 @@ Photos: Juho Huttunen`,
 
       [KAKSI_KUVAA]
 
+      *The exhibition Remix the Archive was open to the public from 20 September – 26 October 2024 in an exhibition space in Helsinki’s Vallila district (Teollisuuskatu 9D). Hosted by the Finnish National Gallery.*
+
       [Fakewhale Article](https://log.fakewhale.xyz/remix-the-archive-at-alusta-space-helsinki/)
       [STT Info](https://www.sttinfo.fi/tiedote/70520187/remix-the-archive-gives-artworks-from-the-finnish-national-gallerys-collection-a-new-form-through-generative-art?publisherId=17525083&lang=en)
     `,
@@ -78,9 +107,10 @@ Photos: Juho Huttunen`,
     title: 'Alusta Space',
     date: 'September 15, 2024',
     author: 'Alvar Mahlberg',
-    description: 'Conversion of an old office building into a modern exhibition venue. Strong focus on recyclable materials and the multi-purpose nature of the space.',
-    team: `**Team**
-Space Design: Tuuli Kanerva, Leo Lindroos, Antti Soini
+    description: 'I lead a conversion of an old office building into a modern exhibition venue. Strong focus on recyclable materials and the multi-purpose nature of the space.',
+    team: `**Credits**
+Project Manager: Alvar Mahlberg
+Space Design: Tuuli Kanerva, Leo Lindroos, Antti Soini (Nervin Architecture)
 Construction: Niko Rissanen
 Electrical installation: Markku Huvilinna
 Photos: Kalle Kouhia`,
@@ -96,8 +126,9 @@ Photos: Kalle Kouhia`,
     title: 'Combine24',
     date: 'September 1, 2024',
     author: 'Alvar Mahlberg',
-    description: 'A global digital art competition to elevate Finland’s national art collection through creative coding.',
-    team: `**Team**
+    description: 'I led an open international generative art competition as part of The Digital Finnish National Gallery program. The competition invited participants from over 47 countries to create a new generative artwork that innovatively used the copyright-free collection data and archive material of the Finnish National Gallery.',
+    team: `**Credits**
+Project Manager: Alvar Mahlberg
 Producer: Anna Puhakka
 Systems Designer: Mitja Kaipiainen
 Production: Milla Paananen
@@ -106,6 +137,20 @@ Visual identity: Antoine Paikert
 Poster Series: Erno Forsström`,
     content: `
       [COMBINE_KUVA_3]
+
+**Final Jury**
+Martin Grasser - Generative artist
+Luka Piškorec - Computational architect 
+Diana Velasco - Founder and Director of MoNDA
+Leevi Haapala - Dean of the Academy of Fine Arts
+Melissa Wiederrecht - Algorithmic Fine Artist
+
+**Shortlist Committee**
+Sofia Garcia - Foinder of ARTXCODE
+Licia He - Generative Artist
+Joonas Toivonen - Generative Artist
+Linda Dounia - Artist
+Emily Xie - Visual Artist
 
       [COMBINE_NELIO]
 
@@ -126,7 +171,7 @@ Poster Series: Erno Forsström`,
     date: 'December 15, 2023',
     author: 'Alvar Mahlberg',
     description: 'Blockchain-based platform that enables the publishing, sharing, and collecting of digital content — including images, videos, music, 3d objects, and texts.',
-    team: `**Team**
+    team: `**Credits**
 Lead Developer: Kasper Tontti
 System Architect: Kai-Markus Lehtimäki
 Software Development: Artur Veselovski, Manu Matila
@@ -159,6 +204,40 @@ Partnerships: Marja Konttinen`,
 
       [METASPACE_VAAKA]
     `,
+  },
+  'museum-of-tomorrow': {
+    title: 'Museum of Tomorrow',
+    date: '2025',
+    author: 'Alvar Mahlberg',
+    description: '',
+    team: `**Credits**
+Production company: Veli Studio
+Executive Producer: Veera Almila
+Directors & Cinematography: Juho Vesanen & kaverikarim
+Editor: Juho Vesanen
+Website: Antoine Paikert & Manu Matila
+Together with: Mitja Kaipiainen, Kati Laakso, Anssi Vallius`,
+    content: `
+
+      [VIMEO_VIDEO]
+
+      I led a documentary initiative exploring how digital transformation might reshape museums in the coming years. The production was carried out by a highly capable production team from Veli Studio.
+
+      Interviewees
+– Asher Remy-Toledo Founder, Hyphen Hub
+– Billy Clark, Artistic Director, CultureHub
+– Eileen Isagon Skyers, Media Art Curator
+– Dina Litovsky, Photographer
+– Josh Hubberman, Co-Founder, CTHDRL
+– Lawrence Siu, Senior Architect, OMA
+– Lynn Hershman Leeson, Pioneering Artist
+– Manuel Dilone, Co-Founder, U.N.N.A.M.A.E.D
+– Nick Law, Creative Chairperson of Accenture Song 
+– Peter Hastings Falk, Art Historian and Curator
+– Timo Kiuru, Creative Director
+
+      [Museum of Tomorrow Website](https://www.museumoftomorrow.fi)
+    `,
   }
 };
 
@@ -188,6 +267,123 @@ export default async function ProjectPage({ params, searchParams }) {
   }
 
   const renderContent = async (paragraph, index) => {
+    // Check if this is the artist list section
+    if (paragraph.includes('Participating Artists & Works')) {
+      const lines = paragraph.trim().split('\n');
+      const title = lines[0];
+      // Filter out empty lines and the "The exhibition was realized..." text
+      const allLines = lines.slice(1);
+      const exhibitionTextIndex = allLines.findIndex(line => line.includes('The exhibition was realized'));
+      
+      let artists, exhibitionText;
+      if (exhibitionTextIndex !== -1) {
+        artists = allLines.slice(0, exhibitionTextIndex).filter(line => line.trim() !== '');
+        exhibitionText = allLines[exhibitionTextIndex];
+      } else {
+        artists = allLines.filter(line => line.trim() !== '');
+        exhibitionText = null;
+      }
+      
+      return (
+        <div key={index} className="space-y-4">
+          <h3 className="text-[18px] md:text-[22px] font-bold text-black">{title}</h3>
+          <ul className="space-y-2">
+            {artists.map((artist, i) => {
+              const parts = artist.split(' – ');
+              const artistName = parts[0];
+              const workName = parts[1] || '';
+              return (
+                <li key={i} className="flex flex-row flex-nowrap gap-2">
+                  <span className="font-medium text-black whitespace-nowrap">{artistName}</span>
+                  {workName && <span className="text-gray-600 whitespace-nowrap">– {workName}</span>}
+                </li>
+              );
+            })}
+          </ul>
+          {exhibitionText && (
+            <p className="mt-6">{exhibitionText}</p>
+          )}
+        </div>
+      );
+    }
+    // Check if this is the interviewees list section
+    if (paragraph.includes('Interviewees')) {
+      const lines = paragraph.trim().split('\n');
+      const title = lines[0];
+      const interviewees = lines.slice(1).filter(line => line.trim() !== '' && line.trim().startsWith('–'));
+      
+      return (
+        <div key={index} className="space-y-4">
+          <h3 className="text-[18px] md:text-[22px] font-bold text-black">{title}</h3>
+          <ul className="space-y-2">
+            {interviewees.map((interviewee, i) => {
+              const text = interviewee.replace('–', '').trim();
+              // Split by first comma
+              const commaIndex = text.indexOf(',');
+              let name, title;
+              if (commaIndex !== -1) {
+                name = text.substring(0, commaIndex).trim();
+                title = text.substring(commaIndex + 1).trim();
+              } else {
+                // If no comma, assume first 2 words are name, rest is title
+                // For "Asher Remy-Toledo Founder, Hyphen Hub"
+                const words = text.split(' ');
+                if (words.length > 2) {
+                  name = words.slice(0, 2).join(' ');
+                  title = words.slice(2).join(' ');
+                } else {
+                  name = text;
+                  title = '';
+                }
+              }
+              return (
+                <li key={i} className="flex flex-row flex-nowrap gap-2">
+                  <span className="font-bold text-black">{name}</span>
+                  {title && <span className="text-gray-600"> – {title}</span>}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      );
+    }
+    // Check if this is Final Jury or Shortlist Committee list
+    if (paragraph.includes('**Final Jury**') || paragraph.includes('**Shortlist Committee**')) {
+      const lines = paragraph.trim().split('\n');
+      const sections = [];
+      let currentSection = null;
+      
+      lines.forEach(line => {
+        const trimmed = line.trim();
+        if (trimmed.includes('**Final Jury**')) {
+          if (currentSection) sections.push(currentSection);
+          currentSection = { title: 'Final Jury', members: [] };
+        } else if (trimmed.includes('**Shortlist Committee**')) {
+          if (currentSection) sections.push(currentSection);
+          currentSection = { title: 'Shortlist Committee', members: [] };
+        } else if (currentSection && trimmed !== '') {
+          currentSection.members.push(trimmed);
+        }
+      });
+      if (currentSection) sections.push(currentSection);
+      
+      return (
+        <div key={index} className="space-y-6">
+          {sections.map((section, sectionIndex) => (
+            <div key={sectionIndex} className="space-y-4">
+              <h3 className="text-[18px] md:text-[22px] font-bold text-black">{section.title}</h3>
+              <ul className="space-y-2">
+                {section.members.map((member, i) => (
+                  <li key={i} className="flex flex-row flex-nowrap">
+                    <span className="text-black">{member}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      );
+    }
     if (paragraph.includes('- ')) {
       const items = paragraph.split('\n');
       return (
@@ -592,6 +788,18 @@ export default async function ProjectPage({ params, searchParams }) {
         </p>
       );
     }
+    if (paragraph.includes('*') && !paragraph.includes('**')) {
+      const parts = paragraph.split('*');
+      // Check if this is a date/address line that should stay on one line
+      const isDateAddressLine = paragraph.includes('May') && paragraph.includes('June') && paragraph.includes('Dunkunsthalle');
+      return (
+        <p key={index} className={isDateAddressLine ? "whitespace-nowrap" : ""}>
+          {parts.map((part, i) => 
+            i % 2 === 0 ? part : <em key={i}>{part}</em>
+          )}
+        </p>
+      );
+    }
     if (paragraph.includes('[') && paragraph.includes('](')) {
       const parts = paragraph.split(/\[|\]|\(|\)/);
       return (
@@ -788,7 +996,7 @@ export default async function ProjectPage({ params, searchParams }) {
           <div className="aspect-[3/2] relative">
             <MediaWrapper creator="">
               <Image
-                src="/dunkku.jpeg"
+                src="/dunkkuj.jpg"
                 alt="RMXTA New York exhibition view"
                 fill
                 className="object-cover"
@@ -836,10 +1044,10 @@ export default async function ProjectPage({ params, searchParams }) {
     if (paragraph.trim() === '[KUVA_4]') {
       return (
         <div key={index}>
-          <div className="aspect-[2/3] relative">
+          <div className="aspect-[3/2] relative">
             <MediaWrapper creator="">
               <Image
-                src="/rmxta-newyork-4.jpg"
+                src="/janne8.jpg"
                 alt="RMXTA New York exhibition detail"
                 fill
                 className="object-cover"
@@ -884,6 +1092,41 @@ export default async function ProjectPage({ params, searchParams }) {
         </div>
       );
     }
+    if (paragraph.trim() === '[MUSEUM_OF_TOMORROW_IMAGE]') {
+      return (
+        <div key={index}>
+          <div className="aspect-[3/2] relative">
+            <MediaWrapper creator="">
+              <Image
+                src="/tomorrow5.jpg"
+                alt="Museum of Tomorrow"
+                fill
+                className="object-cover"
+                priority
+              />
+            </MediaWrapper>
+          </div>
+        </div>
+      );
+    }
+    if (paragraph.trim() === '[VIMEO_VIDEO]') {
+      const videoId = '1144884805';
+      const vimeoUrl = `https://player.vimeo.com/video/${videoId}?context=Vimeo%5CController%5CApi%5CResources%5CVideoController.&h=86cf956dc5&s=97b6ba742b36b632bc1e0671b57bec67911622be_1765390788&title=0&byline=0&portrait=0`;
+      return (
+        <div key={index} className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+          <div className="aspect-video relative max-w-7xl mx-auto">
+            <iframe
+              src={vimeoUrl}
+              className="absolute inset-0 w-full h-full"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="Museum of Tomorrow"
+            />
+          </div>
+        </div>
+      );
+    }
     return <p key={index}>{paragraph.trim()}</p>;
   };
 
@@ -894,7 +1137,7 @@ export default async function ProjectPage({ params, searchParams }) {
           {project.date} by <Link href="/" className="underline hover:text-black">{project.author}</Link>
         </div>
 
-        <h1 className="text-[28px] md:text-[48px] font-bold text-black mb-6">
+        <h1 className="text-[28px] md:text-[42px] font-bold text-black mb-6">
           {project.title}
         </h1>
 
@@ -908,9 +1151,9 @@ export default async function ProjectPage({ params, searchParams }) {
 
         <div className="border-t border-gray-200 pt-8 mt-16">
           <pre className="text-[10px] md:text-[14px] text-gray-900 mb-8 font-sans whitespace-pre-wrap">
-            <span className="font-bold">Team</span>
+            <span className="font-bold">Credits</span>
             {'\n'}
-            {project.team.replace('**Team**\n', '')}
+            {project.team.replace('**Credits**\n', '')}
           </pre>
           
           <Link 

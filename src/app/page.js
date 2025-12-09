@@ -15,6 +15,13 @@ export default function Home() {
       href: '/rmxta-newyork'
     },
     {
+      title: 'Museum of Tomorrow',
+      description: 'Documentary Series',
+      year: '2025',
+      image: '/tomorrow5.jpg',
+      href: '/museum-of-tomorrow'
+    },
+    {
       title: "Remix the Archive Helsinki",
       description: "Generative art exhibition",
       year: "2024",
@@ -48,6 +55,13 @@ export default function Home() {
       year: "2022",
       image: '/meta1.jpg',
       href: "/metaspace"
+    },
+    {
+      title: "Blockchain Laboratory",
+      description: "Research Group",
+      year: "2020",
+      image: '/labra3.jpg',
+      href: "/blockchain-laboratory"
     }
   ]
 
@@ -99,7 +113,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-            <div className="w-full md:w-[300px] aspect-[3/4] relative flex-shrink-0">
+            <div className="w-full md:w-[240px] aspect-[3/4] relative flex-shrink-0">
               <Image
                 src="/profile.jpg"
                 alt="Alvar Mahlberg"
@@ -111,16 +125,17 @@ export default function Home() {
             
             <div className="text-[18px] md:text-[20px] space-y-6 text-gray-600">
               <p>
-                I lead ambitious projects and teams at the intersection of art, culture, and technology.
+              I lead ambitious projects and teams at the intersection of art, culture, and technology.
+              
               </p>
               <p>
-                I currently work for the Finnish National Gallery where we redefine museum practices by integrating emerging technologies, digital art, and agile exhibition models to create more dynamic and accessible cultural experiences.
+              I work with artists, galleries, and museums to develop digital initiatives that expand audiences, strengthen institutional capabilities, and open new revenue streams.
               </p>
               <p>
-                I grew up in Helsinki and studied Information Systems Science at the University of Jyväskylä.
+              I grew up in Helsinki and hold an M.Sc. in Information Systems Science.
               </p>
               <p>
-                You can reach me at <a href="mailto:alvarmahlberg@gmail.com" className="underline">alvarmahlberg@gmail.com</a>
+                You can reach me at <a href="mailto:alvar@alvar.energy" className="underline">alvar@alvar.energy</a>
               </p>
             </div>
           </div>
