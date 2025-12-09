@@ -10,6 +10,8 @@ const projects = {
     description: `
     `,
     team: `**Credits**
+Artists: Newyellow, Nahuel Gerth, Andreas Rau, Ilmo Kapanen & Aarni Kapanen, Blas.v, Roni Kaufman, Agoston Nagy, Jeremy Schoenherr (Jeres), Arttu Koskela (Shaderism), and Tuomo Rainio
+
 Project Manager: Alvar Mahlberg
 Systems Design: Mitja Kaipiainen
 Space Design: Leo Lindroos, Tuuli Kanerva, Antti Soini
@@ -26,28 +28,16 @@ Photos: Janne Tuunanen`,
 
   [KUVA_1]
 
-    I led the international generative art exhibition project and coordinated the working team in collaboration with several cultural institutions. It was a fast-paced collaboration across organisations, and highly rewarding to see the final outcome and how audiences engaged with the generative artworks. 
+    I led the international generative art exhibition project and coordinated the working team together with several cultural institutions. Seeing the outcome come alive and observing how audiences interacted with the generative artworks was deeply rewarding. 
 
 [KUVA_3]
 
-*Remix the Archive* was a dialogue between past, present and the future, where history was not just preserved but reimagined. Each artist in this exhibition used generative art techniques to create new, algorithmic art that were archived again in the latest mediums. Visitors were encouraged to engage with the artworks, interact with the systems and, ultimately, remix the archive.
+
 
 [KUVA_6]
 
-Participating Artists & Works
-Newyellow – A Dance with History
-Nahuel Gerth – BodyArtLab
-Andreas Rau – Inventory Numbers
-Ilmo Kapanen & Aarni Kapanen – Loom Of Reality
-Blas.v – Perseverance
-Roni Kaufman – Portrait Robot
-Agoston Nagy – re-frame
-Jeremy Schoenherr (Jeres) – Repetition and Noise
-Arttu Koskela (Shaderism) – The Artist Code
-Tuomo Rainio – Wunderblock
 
 
-*9 May – 21 June Dunkunsthalle, 64 Fulton St, 10038 NYC.*
 
 
       [KUVA_4]
@@ -74,8 +64,7 @@ Production: Anna Puhakka
 Controllers: Elias Hakala
 Photos: Juho Huttunen`,
     content: `
-    I led the generative art exhibition project and coordinated the working team. It was a pleasure to work with a small and dedicated team to present new forms of art and engage new audiences.
-
+    I led the generative art exhibition project and coordinated the working team. It was a pleasure to work with a small and dedicated team to present new 
 
       [MOBILE_1]
 
@@ -107,7 +96,7 @@ Photos: Juho Huttunen`,
     title: 'Alusta Space',
     date: 'September 15, 2024',
     author: 'Alvar Mahlberg',
-    description: 'I lead a conversion of an old office building into a modern exhibition venue. Strong focus on recyclable materials and the multi-purpose nature of the space.',
+    description: 'I led a conversion of an old office building into a modern exhibition venue. Strong focus on recyclable materials and the multi-purpose nature of the space.',
     team: `**Credits**
 Project Manager: Alvar Mahlberg
 Space Design: Tuuli Kanerva, Leo Lindroos, Antti Soini (Nervin Architecture)
@@ -134,33 +123,21 @@ Systems Designer: Mitja Kaipiainen
 Production: Milla Paananen
 Website: Rasmus Haikka 
 Visual identity: Antoine Paikert
-Poster Series: Erno Forsström`,
+Poster Series: Erno Forsström
+Shortlist Committee: Sofia Garcia, Licia He, Joonas Toivonen, Linda Dounia, Emily Xie
+Final Jury: Martin Grasser, Luka Piškorec, Diana Velasco, Leevi Haapala, Melissa Wiederrecht`,
     content: `
       [COMBINE_KUVA_3]
 
-**Final Jury**
-Martin Grasser - Generative artist
-Luka Piškorec - Computational architect 
-Diana Velasco - Founder and Director of MoNDA
-Leevi Haapala - Dean of the Academy of Fine Arts
-Melissa Wiederrecht - Algorithmic Fine Artist
 
-**Shortlist Committee**
-Sofia Garcia - Foinder of ARTXCODE
-Licia He - Generative Artist
-Joonas Toivonen - Generative Artist
-Linda Dounia - Artist
-Emily Xie - Visual Artist
 
-      [COMBINE_NELIO]
+ 
 
       [COMBINE_VIDEO_3]
 
-      [NELIO_KUVA]
+      
 
-      [KAKSI_VIDEOTA]
 
-      [KAKSI_VIDEOTA_2]
 
       [Combine24 Website](https://combine24.alusta.art)
       [Finnish National Gallery](https://www.kansallisgalleria.fi/en)
@@ -172,6 +149,7 @@ Emily Xie - Visual Artist
     author: 'Alvar Mahlberg',
     description: 'Blockchain-based platform that enables the publishing, sharing, and collecting of digital content — including images, videos, music, 3d objects, and texts.',
     team: `**Credits**
+Project Manager: Alvar Mahlberg
 Lead Developer: Kasper Tontti
 System Architect: Kai-Markus Lehtimäki
 Software Development: Artur Veselovski, Manu Matila
@@ -195,7 +173,7 @@ Partnerships: Marja Konttinen`,
     title: 'Metaspace',
     date: 'June 10, 2022',
     author: 'Alvar Mahlberg',
-    description: 'Web3 native platform for WebGL-based virtual galleries where users could create their own art exhibitions.',
+    description: 'I led a company developing Web3-native virtual art galleries, enabling artists and institutions to present and experience digital artworks in immersive online gallery spaces.',
     team: 'Startup adventure from my friends basement',
     content: `
       [NEW_IMAGE] 
@@ -211,6 +189,8 @@ Partnerships: Marja Konttinen`,
     author: 'Alvar Mahlberg',
     description: '',
     team: `**Credits**
+Interviewees: Asher Remy-Toledo, Billy Clark, Eileen Isagon Skyers, Dina Litovsky, Josh Hubberman, Lawrence Siu, Lynn Hershman Leeson, Manuel Dilone, Nick Law, Peter Hastings Falk, Timo Kiuru
+
 Production company: Veli Studio
 Executive Producer: Veera Almila
 Directors & Cinematography: Juho Vesanen & kaverikarim
@@ -223,20 +203,8 @@ Together with: Mitja Kaipiainen, Kati Laakso, Anssi Vallius`,
 
       I led a documentary initiative exploring how digital transformation might reshape museums in the coming years. The production was carried out by a highly capable production team from Veli Studio.
 
-      Interviewees
-– Asher Remy-Toledo Founder, Hyphen Hub
-– Billy Clark, Artistic Director, CultureHub
-– Eileen Isagon Skyers, Media Art Curator
-– Dina Litovsky, Photographer
-– Josh Hubberman, Co-Founder, CTHDRL
-– Lawrence Siu, Senior Architect, OMA
-– Lynn Hershman Leeson, Pioneering Artist
-– Manuel Dilone, Co-Founder, U.N.N.A.M.A.E.D
-– Nick Law, Creative Chairperson of Accenture Song 
-– Peter Hastings Falk, Art Historian and Curator
-– Timo Kiuru, Creative Director
 
-      [Museum of Tomorrow Website](https://www.museumoftomorrow.fi)
+      [Museum of Tomorrow Documentary](https://www.museumoftomorrow.fi)
     `,
   }
 };
@@ -598,10 +566,10 @@ export default async function ProjectPage({ params, searchParams }) {
     if (paragraph.trim() === '[COMBINE_KUVA_3]') {
       return (
         <div key={index}>
-          <div className="aspect-[5/3] relative border border-gray-200">
+          <div className="aspect-[4/4] relative border border-gray-200">
             <MediaWrapper creator="" darkText>
               <Image
-                src="/combineaikataulu.jpg"
+                src="/image3.jpg"
                 alt="Combine24 timeline"
                 fill
                 className="object-cover"

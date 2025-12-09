@@ -39,7 +39,7 @@ export default function Home() {
       title: "Combine24",
       description: "Global art competition",
       year: "2024",
-      image: '/1_1.png',
+      image: '/image3.jpg',
       href: "/combine24"
     },
     {
@@ -51,7 +51,7 @@ export default function Home() {
     },
     {
       title: "Metaspace",
-      description: "Digital art gallery",
+      description: "Virtual art galleries",
       year: "2022",
       image: '/meta1.jpg',
       href: "/metaspace"
@@ -130,6 +130,9 @@ export default function Home() {
               </p>
               <p>
               I work with artists, galleries, and museums to develop digital initiatives that expand audiences, strengthen institutional capabilities, and open new revenue streams.
+              </p>
+              <p>
+              My expertise lies in digital strategy, project leadership, and concept development, with a strong focus on digital art and emerging technologies.
               </p>
               <p>
               I grew up in Helsinki and hold an M.Sc. in Information Systems Science.
