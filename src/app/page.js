@@ -30,7 +30,7 @@ export default function Home() {
     },
     {
       title: "Alusta Space",
-      description: "Modern exhibition venue",
+      description: "Exhibition venue",
       year: "2024",
       image: '/alusta-space3.jpg',
       href: "/alusta-space"
@@ -51,7 +51,7 @@ export default function Home() {
     },
     {
       title: "Metaspace",
-      description: "Virtual art galleries",
+      description: "Virtual art gallery",
       year: "2022",
       image: '/meta1.jpg',
       href: "/metaspace"
@@ -129,10 +129,7 @@ export default function Home() {
               
               </p>
               <p>
-              I work with artists, galleries, and museums to develop digital initiatives that expand audiences, strengthen institutional capabilities, and open new revenue streams.
-              </p>
-              <p>
-              My expertise lies in digital strategy, project leadership, and concept development, with a strong focus on digital art and emerging technologies.
+              I work with artists, galleries, and museums to develop digital initiatives that expand audiences, grow institutional capabilities, and open new revenue streams.
               </p>
               <p>
               I grew up in Helsinki and hold an M.Sc. in Information Systems Science.

@@ -64,7 +64,7 @@ Production: Anna Puhakka
 Controllers: Elias Hakala
 Photos: Juho Huttunen`,
     content: `
-    I led the generative art exhibition project and coordinated the working team. It was a pleasure to work with a small and dedicated team to present new generative artworks and engage new audiences for the museum.
+    I led the generative art exhibition project from concept to execution. It was a pleasure to work with a small and dedicated team to present new generative artworks and engage new audiences for the museum.
 
       [MOBILE_1]
 
