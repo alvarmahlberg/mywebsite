@@ -159,14 +159,13 @@ export default function HomeContent() {
 
             <div className="text-[18px] md:text-[20px] space-y-6 text-gray-600">
               <p>
-              I lead ambitious projects and teams at the intersection of art, culture, and technology.
-
+                I lead ambitious projects and teams at the intersection of art, culture, and technology.
               </p>
-              <p>
-              I work with artists, galleries, and museums to develop digital initiatives that expand audiences, grow institutional capabilities, and open new revenue streams.
+              <p className="hidden md:block">
+                I work with artists, galleries, and museums to develop digital initiatives that expand audiences, grow institutional capabilities, and open new revenue streams.
               </p>
-              <p>
-              I grew up in Helsinki and hold an M.Sc. in Information Systems Science.
+              <p className="hidden md:block">
+                I grew up in Helsinki and hold an M.Sc. in Information Systems Science.
               </p>
               <p>
                 You can reach me at <a href="mailto:alvar@alvar.energy" className="underline">alvar@alvar.energy</a>
